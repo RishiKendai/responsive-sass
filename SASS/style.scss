@@ -27,7 +27,6 @@ nav {
     top: 0;
     left: 0;
     width: 100vw;
-    opacity: 0.98;
     visibility: hidden;
 
     &.open {
@@ -79,7 +78,11 @@ nav {
 }
 
 @for $i from 1 through 4 {
-    .nav-item:nth-child(#{$i}) {
+    .nav-list .nav-item:nth-child(#{$i}) {
         transition-delay: ($i * 0.1s) + 0.15s;
     }
+}
+
+h6 {
+    background-color: red;
 }

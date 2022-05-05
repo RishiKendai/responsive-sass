@@ -105,7 +105,6 @@ nav {
   top: 0;
   left: 0;
   width: 100vw;
-  opacity: 0.98;
   visibility: hidden;
 }
 
@@ -172,23 +171,27 @@ nav .nav-list .nav-item:not(.active) .nav-link:hover {
   color: #ebb7e2;
 }
 
-.nav-item:nth-child(1) {
+.nav-list .nav-item:nth-child(1) {
   -webkit-transition-delay: 0.25s;
           transition-delay: 0.25s;
 }
 
-.nav-item:nth-child(2) {
+.nav-list .nav-item:nth-child(2) {
   -webkit-transition-delay: 0.35s;
           transition-delay: 0.35s;
 }
 
-.nav-item:nth-child(3) {
+.nav-list .nav-item:nth-child(3) {
   -webkit-transition-delay: 0.45s;
           transition-delay: 0.45s;
 }
 
-.nav-item:nth-child(4) {
+.nav-list .nav-item:nth-child(4) {
   -webkit-transition-delay: 0.55s;
           transition-delay: 0.55s;
+}
+
+h6 {
+  background-color: red;
 }
 /*# sourceMappingURL=style.css.map */
