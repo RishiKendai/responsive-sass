@@ -1,0 +1,30 @@
+*,
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+// FONTS
+$heading-font: "Montserrat", sans-serif;
+$title-font: "Roboto Slab", serif;
+$text-font: "Open Sans", sans-serif;
+
+// COLORS
+$primary-color: #f1e9f9;
+$secondary-color: #8547c2;
+$secondary-hover: #b894db;
+$accent-color: #c940b2;
+$accent-hover: #ebb7e2;
+
+@mixin transition-ease {
+    transition: all 350ms ease-in-out;
+}
+
+@function set-text-color($color) {
+    @if (lightness($color) > 40%) {
+        @return #000;
+    } @else {
+        @return #ffffff;
+    }
+}

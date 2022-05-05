@@ -1,0 +1,194 @@
+*,
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* MENU ICON DIV */
+.menu-icon {
+  width: 28px;
+  height: 30px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  z-index: 2;
+}
+
+/* HAMBURGER */
+.hamburger {
+  position: absolute;
+  width: 28px;
+  height: 3px;
+  background-color: #272727;
+  -webkit-transition: -webkit-transform 350ms ease-in-out;
+  transition: -webkit-transform 350ms ease-in-out;
+  transition: transform 350ms ease-in-out;
+  transition: transform 350ms ease-in-out, -webkit-transform 350ms ease-in-out;
+  /* HAMBURGER OPEN */
+}
+
+.hamburger::before, .hamburger::after {
+  content: "";
+  top: -8px;
+  left: 0;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  background-color: #272727;
+}
+
+.hamburger::after {
+  top: 8px;
+  width: 20px;
+}
+
+.hamburger.open {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+  background: transparent;
+}
+
+.hamburger.open::before, .hamburger.open::after {
+  background-color: #ffffff;
+}
+
+.hamburger.open::before {
+  border-radius: 50%;
+  -webkit-transform: rotate(45deg) translate(6px, 5px);
+          transform: rotate(45deg) translate(6px, 5px);
+}
+
+.hamburger.open::after {
+  border-radius: 50%;
+  width: 28px;
+  -webkit-transform: rotate(-45deg) translate(6px, -5px);
+          transform: rotate(-45deg) translate(6px, -5px);
+}
+
+body {
+  background-color: #f1e9f9;
+}
+
+.top-bar {
+  padding: 5% 7%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+}
+
+.logo {
+  color: #c940b2;
+  font: 700 2rem "Montserrat", sans-serif;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  opacity: 0.98;
+  visibility: hidden;
+}
+
+nav.open {
+  visibility: visible;
+}
+
+nav .nav-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column wrap;
+          flex-flow: column wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  background-color: #333;
+  list-style-type: none;
+  -webkit-transition: all 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+}
+
+nav .nav-list.open {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+nav .nav-list .nav-item {
+  -webkit-transform: translateX(100vw);
+          transform: translateX(100vw);
+  -webkit-transition: all 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+}
+
+nav .nav-list .nav-item.open {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+nav .nav-list .nav-item.active > a {
+  color: #c940b2;
+}
+
+nav .nav-list .nav-item .nav-link {
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 2rem 0;
+  font: 550 2rem "Roboto Slab", serif;
+  letter-spacing: 1.2px;
+  -webkit-transition: all 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
+}
+
+nav .nav-list .nav-item:not(.active) .nav-link:hover {
+  color: #ebb7e2;
+}
+
+.nav-item:nth-child(1) {
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+
+.nav-item:nth-child(2) {
+  -webkit-transition-delay: 0.35s;
+          transition-delay: 0.35s;
+}
+
+.nav-item:nth-child(3) {
+  -webkit-transition-delay: 0.45s;
+          transition-delay: 0.45s;
+}
+
+.nav-item:nth-child(4) {
+  -webkit-transition-delay: 0.55s;
+          transition-delay: 0.55s;
+}
+/*# sourceMappingURL=style.css.map */
