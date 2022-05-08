@@ -1,0 +1,108 @@
+.project-section {
+    padding: 5% 15px;
+
+    & h5 {
+        font: 600 2rem $heading;
+        color: $accent-color;
+        margin-bottom: 3%;
+    }
+    & p {
+        font: 1.1rem $text;
+        word-break: break-all;
+    }
+
+    & .wrap-projects {
+        margin-top: 4rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        & .projects {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 3rem;
+            border-bottom: 3px solid rgba($accent-hover, 0.14);
+
+            & .description {
+                margin-bottom: 2rem;
+            }
+            & .wrap-link {
+                width: 100%;
+                position: relative;
+                margin-bottom: 5px;
+                overflow: hidden;
+
+                & .project-image {
+                    height: 180px;
+                    width: 100%;
+                    position: relative;
+                }
+                &::after {
+                    content: "";
+                    bottom: 0;
+                    left: 0;
+                    height: 0;
+                    position: absolute;
+                    @include transition-ease;
+                }
+
+                & .git-link {
+                    position: absolute;
+                    left: 50%;
+                    top: 0;
+                    transform: translate(-50%, -100%);
+                    z-index: 1;
+                    opacity: 0;
+                    font: 600 1.4rem $text;
+                    @include transition-ease;
+
+                    & .fa-brands {
+                        color: $light-75;
+                    }
+                    & a {
+                        word-break: break-all;
+                        color: var(--text-75);
+                        color: $secondary-color;
+                    }
+                }
+
+                &:hover::after {
+                    content: "";
+                    inset: auto 0 0;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.84);
+                    position: absolute;
+                }
+
+                &:hover > .git-link {
+                    position: absolute;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    opacity: 1;
+                }
+            }
+
+            & h4 {
+                align-self: flex-start;
+                font: 550 1.4rem $heading;
+                color: $accent-color;
+                margin-bottom: 10px;
+                padding-left: 8px;
+                position: relative;
+
+                &::before {
+                    content: "";
+                    inset: 0;
+                    position: absolute;
+                    background: $accent-hover;
+                    width: 3px;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}

@@ -14,7 +14,7 @@
   position: absolute;
   width: 28px;
   height: 3px;
-  background-color: #272727;
+  background-color: var(--text-50);
   transition: transform 350ms ease-in-out;
 
   &::before,
@@ -25,7 +25,7 @@
     position: absolute;
     width: inherit;
     height: inherit;
-    background-color: #272727;
+    background-color: var(--text-50);
   }
 
   &::after {

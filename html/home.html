@@ -7,33 +7,228 @@
     <title>Home</title>
     <!-- Google Font -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400&family=Roboto+Slab:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Montserrat:wght@400;700&family=Noto+Serif:wght@400;700&family=Oleo+Script+Swash+Caps:wght@400;700&family=Poppins:wght@400;600&display=swap"
       rel="stylesheet"
+    />
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <!-- CSS LINK -->
     <link rel="stylesheet" href="/style/style.css" />
+    <!-- JQUERY CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- JS LINK -->
-    <script src="/js/menu.js" defer></script>
+    <!-- <script src="/js/menu.js" defer></script> -->
+    <!-- Including the TagCloud.js script CDN in the document    -->
+    <script src="https://cdn.jsdelivr.net/npm/TagCloud@2.2.0/dist/TagCloud.min.js"></script>
+    <!-- SPHERE JS -->
+    <script src="/js/sphere.js" defer></script>
+    <!-- ANIMATE JS -->
+    <script src="/js/animate.js" defer></script>
   </head>
-  <body>
-    <header class='top-bar'>
-      <div class="logo">Hello</div>
+  <!-- BODY -->
+  <body class="dark">
+    <!-- HOME -->
+    <section class="home">
+      <!-- <header class="top-bar"> -->
+      <div class="logo">Rk</div>
       <!-- HAMBUGER ICON -->
-      <div class="menu-icon">
+      <!-- <div class="menu-icon">
         <span class="hamburger"></span>
-      </div>
-    </header>
-    <nav>
+      </div> -->
+      <!-- </header> -->
+      <!-- <nav>
       <ul class="nav-list">
-        <li class="nav-item  active"><a href="" class="nav-link">Home</a></li>
-        <li class="nav-item "><a href="" class="nav-link">Projects</a></li>
-        <li class="nav-item "><a href="" class="nav-link">Showcase</a></li>
-        <li class="nav-item "><a href="" class="nav-link">Contact us</a></li>
+        <li class="nav-item active"><a href="" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="" class="nav-link">Projects</a></li>
+        <li class="nav-item"><a href="" class="nav-link">Showcase</a></li>
+        <li class="nav-item"><a href="" class="nav-link">Contact us</a></li>
       </ul>
-    </nav>
-    <main>
-      <h3>Don't have Business Ideas ?</h3>
-      <h6>We are here</h6>
-    </main>
+    </nav> -->
+      <section class="details">
+        <h3 class="name">I'm Rishikesh</h3>
+        <h5 class="tag">Web Developer, Programmer</h5>
+      </section>
+      <!-- SCROLL MORE -->
+      <div class="left-down more">
+        <p>see more</p>
+        <i class="fa-solid fa-arrow-down"></i>
+      </div>
+      <div class="right-down more">
+        <p>see more</p>
+        <i class="fa-solid fa-arrow-down"></i>
+      </div>
+    </section>
+    <!-- PORTFOLIO -->
+    <section class="portfolio">
+      <!-- ABOUT ME -->
+      <div class="about-me">
+        <h5>Myself and I</h5>
+        <p>
+          since completion of my final year project in web application, I have
+          been passionate about web and started learning web technologies
+        </p>
+      </div>
+      <!-- SKILLS -->
+      <div class="skills">
+        <p>I have been currently working in these technologies</p>
+        <!-- SPHERE -->
+        <span class="sphere"></span>
+      </div>
+      <!-- LANGUAGES -->
+      <div class="languages">
+        <h5>Languages</h5>
+        <div class="wrap-languages">
+          <!-- PROGRAMS -->
+          <div class="programs">
+            <div class="lang-round">C</div>
+            <div class="progress-bar"><span data-progress="78"></span></div>
+          </div>
+          <!-- PROGRAMS -->
+          <div class="programs">
+            <div class="lang-round">JAVA</div>
+            <div class="progress-bar"><span data-progress="70"></span></div>
+          </div>
+          <!-- PROGRAMS -->
+          <div class="programs">
+            <div class="lang-round">PYTHON</div>
+            <div class="progress-bar"><span data-progress="15"></span></div>
+          </div>
+          <!-- PROGRAMS -->
+          <div class="programs">
+            <div class="lang-round">JAVASCRIPT</div>
+            <div class="progress-bar"><span data-progress="80"></span></div>
+          </div>
+        </div>
+      </div>
+      <!-- SCROLL MORE -->
+      <div class="left-down more">
+        <p>see more</p>
+        <i class="fa-solid fa-arrow-down"></i>
+      </div>
+      <div class="right-down more">
+        <p>see more</p>
+        <i class="fa-solid fa-arrow-down"></i>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION-->
+    <section class="project-section">
+      <h5>My Portfolio</h5>
+      <p>
+        A small gallery of recent projects done by me. I've done them all by
+        learning from various platform and getting inspired by other.
+      </p>
+      <!-- PROJECTS DIVISON -->
+      <div class="wrap-projects">
+        <!--  -->
+        <div class="projects">
+          <div class="wrap-link">
+            <img
+              class="project-image"
+              src="https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__480.jpg"
+              alt="none"
+            />
+            <span class="git-link">
+              <a href="#!">
+                <i class="fa-brands fa-github"></i>
+                Link
+              </a>
+            </span>
+          </div>
+
+          <h4>Tic Tac Toe</h4>
+          <p class="description">
+            A classic game loved by everyone around world, enjoyed myself while
+            developing the game.
+          </p>
+        </div>
+        <!--  -->
+        <div class="projects">
+          <div class="wrap-link">
+            <img
+              class="project-image"
+              src="https://cdn.pixabay.com/photo/2017/10/10/07/48/hills-2836301__340.jpg"
+              alt="none"
+            />
+            <span class="git-link">
+              <a href="">
+                <i class="fa-brands fa-github"></i>
+                link
+              </a>
+            </span>
+          </div>
+
+          <h4>Responsive Quiz</h4>
+          <p class="description">
+            Making a quiz game is one the default for all beginners who start
+            their journey in web. Even I was no exceptional, I have created
+            simple responsive quiz app.
+          </p>
+        </div>
+        <!--  -->
+        <div class="projects">
+          <div class="wrap-link">
+            <img
+              class="project-image"
+              src="https://cdn.pixabay.com/photo/2015/01/28/23/35/hills-615429__340.jpg"
+              alt="none"
+            />
+            <span class="git-link">
+              <a href="">
+                <i class="fa-brands fa-github"></i>
+                link
+              </a>
+            </span>
+          </div>
+          <h4>WeShare</h4>
+          <p class="description">
+            An application to track your expenses while travelling with your
+            gangs are friends. You can even share your expenses and track them
+            and enjoy your trip.
+          </p>
+        </div>
+        <!--  -->
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section">
+      <h5>Get in Touch</h5>
+      <form action="">
+        <!-- INPUT SECTION -->
+        <div class="input-div">
+          <input class="txtbox" type="text" name="" id="" required />
+          <label class="txt-label">Enter Name</label>
+          <span class="bottom"></span>
+        </div>
+        <!-- INPUT SECTION -->
+        <div class="input-div">
+          <input class="txtbox" type="text" name="" id="" required />
+          <label class="txt-label">Email-ID</label>
+          <span class="bottom"></span>
+        </div>
+        <!-- INPUT SECTION -->
+        <div class="input-div area">
+          <textarea class="txtbox" name="" id="" required></textarea>
+          <label class="txt-label">Message</label>
+          <span class="bottom"></span>
+        </div>
+        <button class="btn send">
+          <i class="fa-solid fa-paper-plane"></i>
+          SEND
+        </button>
+      </form>
+      <div class="social-icons">
+        <i class="fa-brands fa-github"></i>
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-brands fa-instagram"></i>
+      </div>
+    </section>
   </body>
 </html>

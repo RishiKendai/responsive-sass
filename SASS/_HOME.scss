@@ -1,0 +1,56 @@
+section.home {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.name {
+    color: var(--text-75);
+    font: italic 4rem "Oleo Script Swash Caps", cursive;
+    letter-spacing: 1.2px;
+}
+
+.tag {
+    color: var(--text-50);
+    font: 700 1.3rem $title;
+}
+
+.home .details {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.more {
+    position: absolute;
+    bottom: 0;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & p {
+        font-family: "Segoe UI", Verdana, sans-serif;
+        writing-mode: vertical-rl;
+        padding: 0 0 4px 4px;
+        animation: topMotion 900ms linear infinite alternate forwards;
+    }
+    &.left-down {
+        left: 0;
+    }
+    &.right-down {
+        right: 0;
+    }
+}
+
+@keyframes topMotion {
+    from {
+        padding-bottom: 16px;
+    }
+    to {
+        padding-bottom: 6px;
+    }
+} ;

@@ -1,0 +1,125 @@
+.portfolio {
+    // height: 100vh;
+    padding: 5% 15px;
+    position: relative;
+}
+
+.about-me {
+    margin-bottom: 8%;
+    & h5 {
+        font: 600 2rem $heading;
+        color: $accent-color;
+        margin-bottom: 3%;
+    }
+    & p {
+        font: 1.1rem $text;
+        word-break: break-all;
+    }
+}
+// SKILLS
+.skills {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    & p {
+        color: var(--text-50);
+        text-align: center;
+        font: 600 1.4rem $title;
+    }
+}
+.tagcloud {
+    cursor: pointer;
+    font-family: 640 1.2rem $text;
+    color: $secondary-color;
+    &--item:hover {
+        color: $secondary-hover;
+    }
+}
+
+// LANGUAGES
+.languages {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & h5 {
+        color: var(--text-50);
+        font: 600 1.9rem $title;
+    }
+
+    & .wrap-languages {
+        width: 100%;
+        padding: 3% 8%;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+        grid-gap: 10px;
+        justify-content: space-around;
+        align-items: center;
+
+        & .programs {
+            margin-bottom: 17%;
+            & .lang-round {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 4%;
+                height: 120px;
+                width: 120px;
+                border-radius: 50%;
+                box-shadow: 4px 6px 12px #00000043;
+                font: 600 1rem $text;
+                color: $secondary-hover;
+                margin-bottom: 10%;
+                // overflow: hidden;
+                cursor: pointer;
+                position: relative;
+                @include transition-ease;
+                z-index: 1;
+
+                &:hover {
+                    transform: scale(1.1);
+                    box-shadow: 24px 26px 82px #00000066;                    
+                }
+
+                &::after {
+                    content: "";
+                    inset: 0;
+                    position: absolute;
+                    height: inherit;
+                    width: inherit;
+                    border-radius: inherit;
+                    box-shadow: 4px 5px 12px inset #ffffff43, 4px 5px 12px inset #ffffff43,
+                        -5px -8px 12px inset transparent, -5px -8px 12px inset transparent;
+                    z-index: -1;
+                }
+
+                &:hover::after {
+                    box-shadow: 
+                    4px 5px 12px inset #ffffff83, 
+                    4px 5px 12px inset #ffffff73,
+                   -5px -8px 12px inset transparent, 
+                   -5px -8px 12px inset transparent;
+                }
+            }
+
+            & .progress-bar {
+                height: 8px;
+                width: 100%;
+                border: 1px solid rgba($secondary-color, 0.24);
+                border-radius: 25px;
+                position: relative;
+                padding: 0;
+
+                & span {
+                    border-radius: 8px;
+                    height: 100%;
+                    display: block;
+                    width: 0;
+                    background-color: $secondary-color;
+                }
+            }
+        }
+    }
+}

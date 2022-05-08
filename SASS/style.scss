@@ -1,12 +1,29 @@
 @import "./CONFIG";
-@import "./_MENU_ICON.scss";
-
+@import "./MENU_ICON";
+@import "./HOME";
+@import "./PORTFOLIO";
+@import "./CONTACT";
+@import "./PROJECT";
 body {
-    background-color: $primary-color;
+    height: 100vh;
+    background-color: var(--primary-color);
+    color: var(--text-75);
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}
+.dark {
+    --primary-color: #{$dark};
+    --text-50: #{$light-50};
+    --text-75: #{$light-75};
 }
 
 .top-bar {
     padding: 5% 7%;
+    height: 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -14,11 +31,14 @@ body {
 }
 
 .logo {
+    align-self: flex-start;
     color: $accent-color;
-    font: 700 2rem $heading-font;
+    padding-left: 4px;
+    font: 700 2rem $style;
 }
 a {
-    color: #ffffff;
+    align-self: flex-start;
+    color: $light-50;
     text-decoration: none;
 }
 
@@ -65,13 +85,13 @@ nav {
                 display: inline-block;
                 text-transform: uppercase;
                 padding: 2rem 0;
-                font: 550 2rem $title-font;
+                font: 550 2rem $title;
                 letter-spacing: 1.2px;
                 @include transition-ease;
             }
 
             &:not(.active) .nav-link:hover {
-                color: $accent-hover;
+                color: rgba($light-50, 0.75);
             }
         }
     }

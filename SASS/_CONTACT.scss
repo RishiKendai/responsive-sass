@@ -1,0 +1,113 @@
+.contact-section {
+    // height: 100vh;
+    padding: 5% 15px;
+
+    & h5 {
+        font: 600 2rem $heading;
+        color: $secondary-color;
+        margin-bottom: 3%;
+    }
+
+    & form {
+        display: flex;
+        width: fit-content;
+        flex-direction: column;
+        justify-content: center;
+        // align-items: center;
+
+        /* INPUT SECTION */
+        .input-div {
+            background-color: rgba(0, 0, 0, 0.58);
+            height: 50px;
+            width: 265px;
+            color: #ffffff;
+            position: relative;
+            border-radius: 5px;
+            overflow: hidden;
+            user-select: none;
+            padding: 0 0.4rem 0 0.4rem;
+            margin: 15px 0;
+        }
+
+        .txtbox {
+            border: none;
+            outline: none;
+            height: 100%;
+            width: 100%;
+            color: #ffffff;
+            padding-top: 10px;
+            font-size: 1.2rem;
+            font-family: "Segoe UI", Verdana, sans-serif;
+            background: none;
+        }
+
+        .txt-label {
+            --label-size: 1.1rem;
+            font: 700 var(--label-size) "Segoe UI", Verdana, sans-serif;
+            position: absolute;
+            inset: 18px 0 0 9px;
+            pointer-events: none;
+            transition: all 450ms ease-in-out 250ms;
+        }
+
+        .area {
+            height: 250px;
+
+            .txt-label {
+                height: fit-content;
+                background-color: rgba(0, 0, 0, 0.58);
+            }
+        }
+
+        .bottom {
+            position: absolute;
+            inset: auto 0 0 0;
+            height: 3px;
+            background-color: #ffffff8a;
+        }
+        .bottom::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            transform: scale(0);
+            transform-origin: center;
+            background-color: #ff8400;
+            transition: transform 450ms ease-in-out 350ms;
+        }
+        /* WHEN INPUT IS ON FOCUS OR INPUT HAS SOME TEXT */
+
+        .txtbox:focus ~ .bottom::after,
+        .txtbox:valid ~ .bottom::after {
+            transform: scale(1);
+        }
+        .txtbox:focus + .txt-label,
+        .txtbox:valid + .txt-label {
+            color: #ff8400;
+            font-size: calc(var(--label-size) - 0.4rem);
+            font-size: calc(inherit - 6%);
+            top: 3px;
+        }
+
+        .btn {
+            margin: 0.75rem 0;
+            padding: 0.5rem;
+            font: 700 1.3rem $heading;
+            border: none;
+            outline: none;
+            border-radius: 7px;
+            position: relative;
+            z-index: 1;
+            color: #ffffff;
+            letter-spacing: 1.3px;
+            width: 130px;
+            width: 100%;
+            cursor: pointer;
+            background-color: transparent;
+        }
+
+        .send {
+            background-color: #339ad9;
+            box-shadow: 4px 7px 11px rgba(255, 255, 255, 0.65) inset, 5px 8px 15px #0000004b;
+        }
+    }
+}

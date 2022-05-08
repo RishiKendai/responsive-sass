@@ -6,25 +6,32 @@ body {
 }
 
 // FONTS
-$heading-font: "Montserrat", sans-serif;
-$title-font: "Roboto Slab", serif;
-$text-font: "Open Sans", sans-serif;
+$style: "Caveat", cursive;
+$heading: "Montserrat", sans-serif;
+$title: "Noto Serif", serif;
+$text: "Poppins", sans-serif;
 
-// COLORS
-$primary-color: #f1e9f9;
+// LIGHT THEME
+$light: #f1e9f9;
+$light-50: rgba(255, 255, 255, 0.45);
+$light-75: rgba(255, 255, 255, 0.95);
+
+// DARK THEME
+$dark: #302f32;
+$dark-50: #272727a3;
+$dark-75: #272727;
+
 $secondary-color: #8547c2;
-$secondary-hover: #b894db;
 $accent-color: #c940b2;
+$secondary-hover: #b894db;
 $accent-hover: #ebb7e2;
+
+:root {
+    --primary-color: #{$light};
+    --text-50: #{$dark-50};
+    --text-75: #{$dark-75};
+}
 
 @mixin transition-ease {
     transition: all 350ms ease-in-out;
-}
-
-@function set-text-color($color) {
-    @if (lightness($color) > 40%) {
-        @return #000;
-    } @else {
-        @return #ffffff;
-    }
 }
