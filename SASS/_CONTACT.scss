@@ -1,6 +1,17 @@
 .contact-section {
     // height: 100vh;
-    padding: 5% 15px;
+    padding: 0 15px 5%;
+    position: relative;
+
+    &::before {
+        content: "@";
+        position: absolute;
+        inset: 25% auto auto 15%;
+        color: rgba(255, 255, 255, 0.14);
+        transform: translate(-50%, -40%) rotate(-40deg);
+        z-index: -1;
+        font: 700 11rem $heading;
+    }
 
     & h5 {
         font: 600 2rem $heading;
@@ -10,17 +21,17 @@
 
     & form {
         display: flex;
-        width: fit-content;
+        width: 100%;
         flex-direction: column;
         justify-content: center;
-        // align-items: center;
+        align-items: center;
 
         /* INPUT SECTION */
         .input-div {
-            background-color: rgba(0, 0, 0, 0.58);
+            background-color: rgba(0, 0, 0, 0.28);
             height: 50px;
             width: 265px;
-            color: #ffffff;
+            color: var(--text-50);
             position: relative;
             border-radius: 5px;
             overflow: hidden;
@@ -34,29 +45,20 @@
             outline: none;
             height: 100%;
             width: 100%;
-            color: #ffffff;
+            color: var(--text-75);
             padding-top: 10px;
             font-size: 1.2rem;
-            font-family: "Segoe UI", Verdana, sans-serif;
+            font-family: $text;
             background: none;
         }
 
         .txt-label {
             --label-size: 1.1rem;
-            font: 700 var(--label-size) "Segoe UI", Verdana, sans-serif;
+            font: 700 var(--label-size) $text;
             position: absolute;
             inset: 18px 0 0 9px;
             pointer-events: none;
             transition: all 450ms ease-in-out 250ms;
-        }
-
-        .area {
-            height: 250px;
-
-            .txt-label {
-                height: fit-content;
-                background-color: rgba(0, 0, 0, 0.58);
-            }
         }
 
         .bottom {
@@ -88,6 +90,26 @@
             top: 3px;
         }
 
+        .area {
+            height: 250px;
+
+            .txt-label {
+                height: fit-content;
+            }
+            .txtbox {
+                resize: none;
+                scroll-behavior: smooth;
+                scrollbar-width: 0;
+                &::-webkit-scrollbar {
+                    width: 0;
+                }
+            }
+            .txtbox:focus,
+            .txtbox:valid {
+                padding-top: 20px;
+            }
+        }
+
         .btn {
             margin: 0.75rem 0;
             padding: 0.5rem;
@@ -99,8 +121,7 @@
             z-index: 1;
             color: #ffffff;
             letter-spacing: 1.3px;
-            width: 130px;
-            width: 100%;
+            width: 265px;
             cursor: pointer;
             background-color: transparent;
         }
@@ -108,6 +129,19 @@
         .send {
             background-color: #339ad9;
             box-shadow: 4px 7px 11px rgba(255, 255, 255, 0.65) inset, 5px 8px 15px #0000004b;
+        }
+    }
+    .social-icons {
+        padding: 5% 3%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .fa-brands {
+            padding: 0 3%;
+            cursor: pointer;
+            filter: drop-shadow(2px 5px $secondary-color);
+            font-size: 1.3rem;
         }
     }
 }

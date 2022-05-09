@@ -308,14 +308,14 @@ section.home {
   height: inherit;
   width: inherit;
   border-radius: inherit;
-  -webkit-box-shadow: 4px 5px 12px inset #ffffff43, 4px 5px 12px inset #ffffff43, -5px -8px 12px inset transparent, -5px -8px 12px inset transparent;
-          box-shadow: 4px 5px 12px inset #ffffff43, 4px 5px 12px inset #ffffff43, -5px -8px 12px inset transparent, -5px -8px 12px inset transparent;
+  -webkit-box-shadow: 4px 5px 12px inset #ffffff43, 4px 5px 12px inset #ffffff43, -5px -8px 12px inset transparent, -5px -8px 12px inset transparent;
+          box-shadow: 4px 5px 12px inset #ffffff43, 4px 5px 12px inset #ffffff43, -5px -8px 12px inset transparent, -5px -8px 12px inset transparent;
   z-index: -1;
 }
 
 .languages .wrap-languages .programs .lang-round:hover::after {
-  -webkit-box-shadow: 4px 5px 12px inset #ffffff83,  4px 5px 12px inset #ffffff73, -5px -8px 12px inset transparent,  -5px -8px 12px inset transparent;
-          box-shadow: 4px 5px 12px inset #ffffff83,  4px 5px 12px inset #ffffff73, -5px -8px 12px inset transparent,  -5px -8px 12px inset transparent;
+  -webkit-box-shadow: 4px 5px 12px inset #ffffff83,  4px 5px 12px inset #ffffff73, -5px -8px 12px inset transparent,  -5px -8px 12px inset transparent;
+          box-shadow: 4px 5px 12px inset #ffffff83,  4px 5px 12px inset #ffffff73, -5px -8px 12px inset transparent,  -5px -8px 12px inset transparent;
 }
 
 .languages .wrap-languages .programs .progress-bar {
@@ -336,7 +336,19 @@ section.home {
 }
 
 .contact-section {
-  padding: 5% 15px;
+  padding: 0 15px 5%;
+  position: relative;
+}
+
+.contact-section::before {
+  content: "@";
+  position: absolute;
+  inset: 25% auto auto 15%;
+  color: rgba(255, 255, 255, 0.14);
+  -webkit-transform: translate(-50%, -40%) rotate(-40deg);
+          transform: translate(-50%, -40%) rotate(-40deg);
+  z-index: -1;
+  font: 700 11rem "Montserrat", sans-serif;
 }
 
 .contact-section h5 {
@@ -349,9 +361,7 @@ section.home {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -359,15 +369,18 @@ section.home {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   /* INPUT SECTION */
   /* WHEN INPUT IS ON FOCUS OR INPUT HAS SOME TEXT */
 }
 
 .contact-section form .input-div {
-  background-color: rgba(0, 0, 0, 0.58);
+  background-color: rgba(0, 0, 0, 0.28);
   height: 50px;
   width: 265px;
-  color: #ffffff;
+  color: var(--text-50);
   position: relative;
   border-radius: 5px;
   overflow: hidden;
@@ -384,32 +397,21 @@ section.home {
   outline: none;
   height: 100%;
   width: 100%;
-  color: #ffffff;
+  color: var(--text-75);
   padding-top: 10px;
   font-size: 1.2rem;
-  font-family: "Segoe UI", Verdana, sans-serif;
+  font-family: "Poppins", sans-serif;
   background: none;
 }
 
 .contact-section form .txt-label {
   --label-size: 1.1rem;
-  font: 700 var(--label-size) "Segoe UI", Verdana, sans-serif;
+  font: 700 var(--label-size) "Poppins", sans-serif;
   position: absolute;
   inset: 18px 0 0 9px;
   pointer-events: none;
   -webkit-transition: all 450ms ease-in-out 250ms;
   transition: all 450ms ease-in-out 250ms;
-}
-
-.contact-section form .area {
-  height: 250px;
-}
-
-.contact-section form .area .txt-label {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  background-color: rgba(0, 0, 0, 0.58);
 }
 
 .contact-section form .bottom {
@@ -448,6 +450,31 @@ section.home {
   top: 3px;
 }
 
+.contact-section form .area {
+  height: 250px;
+}
+
+.contact-section form .area .txt-label {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
+.contact-section form .area .txtbox {
+  resize: none;
+  scroll-behavior: smooth;
+  scrollbar-width: 0;
+}
+
+.contact-section form .area .txtbox::-webkit-scrollbar {
+  width: 0;
+}
+
+.contact-section form .area .txtbox:focus,
+.contact-section form .area .txtbox:valid {
+  padding-top: 20px;
+}
+
 .contact-section form .btn {
   margin: 0.75rem 0;
   padding: 0.5rem;
@@ -459,8 +486,7 @@ section.home {
   z-index: 1;
   color: #ffffff;
   letter-spacing: 1.3px;
-  width: 130px;
-  width: 100%;
+  width: 265px;
   cursor: pointer;
   background-color: transparent;
 }
@@ -469,6 +495,27 @@ section.home {
   background-color: #339ad9;
   -webkit-box-shadow: 4px 7px 11px rgba(255, 255, 255, 0.65) inset, 5px 8px 15px #0000004b;
           box-shadow: 4px 7px 11px rgba(255, 255, 255, 0.65) inset, 5px 8px 15px #0000004b;
+}
+
+.contact-section .social-icons {
+  padding: 5% 3%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact-section .social-icons .fa-brands {
+  padding: 0 3%;
+  cursor: pointer;
+  -webkit-filter: drop-shadow(2px 5px #8547c2);
+          filter: drop-shadow(2px 5px #8547c2);
+  font-size: 1.3rem;
 }
 
 .project-section {
