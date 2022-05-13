@@ -308,14 +308,14 @@ section.home {
   height: inherit;
   width: inherit;
   border-radius: inherit;
-  -webkit-box-shadow: 4px 5px 12px inset #ffffff43, 4px 5px 12px inset #ffffff43, -5px -8px 12px inset transparent, -5px -8px 12px inset transparent;
-          box-shadow: 4px 5px 12px inset #ffffff43, 4px 5px 12px inset #ffffff43, -5px -8px 12px inset transparent, -5px -8px 12px inset transparent;
+  -webkit-box-shadow: 4px 5px 12px inset #ffffff43, 4px 5px 12px inset #ffffff43, -5px -8px 12px inset transparent, -5px -8px 12px inset transparent;
+          box-shadow: 4px 5px 12px inset #ffffff43, 4px 5px 12px inset #ffffff43, -5px -8px 12px inset transparent, -5px -8px 12px inset transparent;
   z-index: -1;
 }
 
 .languages .wrap-languages .programs .lang-round:hover::after {
-  -webkit-box-shadow: 4px 5px 12px inset #ffffff83,  4px 5px 12px inset #ffffff73, -5px -8px 12px inset transparent,  -5px -8px 12px inset transparent;
-          box-shadow: 4px 5px 12px inset #ffffff83,  4px 5px 12px inset #ffffff73, -5px -8px 12px inset transparent,  -5px -8px 12px inset transparent;
+  -webkit-box-shadow: 4px 5px 12px inset #ffffff83,  4px 5px 12px inset #ffffff73, -5px -8px 12px inset transparent,  -5px -8px 12px inset transparent;
+          box-shadow: 4px 5px 12px inset #ffffff83,  4px 5px 12px inset #ffffff73, -5px -8px 12px inset transparent,  -5px -8px 12px inset transparent;
 }
 
 .languages .wrap-languages .programs .progress-bar {
@@ -338,6 +338,19 @@ section.home {
 .contact-section {
   padding: 0 15px 5%;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .contact-section::before {
@@ -361,7 +374,6 @@ section.home {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -377,7 +389,9 @@ section.home {
 }
 
 .contact-section form .input-div {
-  background-color: rgba(0, 0, 0, 0.28);
+  background-color: rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 1px 14px 20px #00000069;
+          box-shadow: 1px 14px 20px #00000069;
   height: 50px;
   width: 265px;
   color: var(--text-50);
@@ -492,7 +506,7 @@ section.home {
 }
 
 .contact-section form .send {
-  background-color: #339ad9;
+  background-color: #8547c2;
   -webkit-box-shadow: 4px 7px 11px rgba(255, 255, 255, 0.65) inset, 5px 8px 15px #0000004b;
           box-shadow: 4px 7px 11px rgba(255, 255, 255, 0.65) inset, 5px 8px 15px #0000004b;
 }
@@ -502,6 +516,7 @@ section.home {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -513,9 +528,12 @@ section.home {
 .contact-section .social-icons .fa-brands {
   padding: 0 3%;
   cursor: pointer;
-  -webkit-filter: drop-shadow(2px 5px #8547c2);
-          filter: drop-shadow(2px 5px #8547c2);
   font-size: 1.3rem;
+}
+
+.contact-section .social-icons .fa-brands:hover {
+  -webkit-filter: drop-shadow(0 0 4px #b894db);
+          filter: drop-shadow(0 0 4px #b894db);
 }
 
 .project-section {
