@@ -1,5 +1,4 @@
 .contact-section {
-    // height: 100vh;
     padding: 0 15px 5%;
     position: relative;
     display: flex;
@@ -24,133 +23,101 @@
     }
 
     & form {
+        margin: 0 auto;
+        background-color: rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(18px);
+        border-radius: 8px;
+        border: 1px solid rgba(0, 0, 0, 0.18);
+        -webkit-backdrop-filter: blur(18px);
+        width: 350px;
+        height: 420px;
         display: flex;
-        // width: 100%;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        & .TextBox__Div {
+            width: 85%;
+            display: flex;
+            flex-direction: column;
+            margin: 15px 0 5px;
+        }
+        & .TextBox__Div label {
+            font: 1.1rem $title;
+            letter-spacing: 1.2px;
+            color: $secondary-hover;
+            font-weight: 550;
+            margin-bottom: 5px;
+        }
 
-        /* INPUT SECTION */
-        .input-div {
-            background-color: rgba(0, 0, 0, 0.35);
-            // border: 1px solid var(--text-50);
-            box-shadow: 1px 14px 20px #00000069;
-            height: 50px;
-            width: 265px;
-            color: var(--text-50);
-            position: relative;
+        & .TextBox__Div input,
+        & .TextBox__Div textarea {
+            padding: 5px;
+            height: 40px;
+            font: 1rem $text;
+            letter-spacing: 1.2px;
+            border: 1px solid rgba(0, 0, 0, 0.25);
+            background-color: rgba(0, 0, 0, 0.18);
             border-radius: 5px;
-            overflow: hidden;
-            user-select: none;
-            padding: 0 0.4rem 0 0.4rem;
-            margin: 15px 0;
-        }
-
-        .txtbox {
-            border: none;
             outline: none;
-            height: 100%;
-            width: 100%;
-            color: var(--text-75);
-            padding-top: 10px;
-            font-size: 1.2rem;
-            font-family: $text;
-            background: none;
+            color: #ffffffaf;
         }
-
-        .txt-label {
-            --label-size: 1.1rem;
-            font: 700 var(--label-size) $text;
-            position: absolute;
-            inset: 18px 0 0 9px;
-            pointer-events: none;
-            transition: all 450ms ease-in-out 250ms;
+        & .TextBox__Div textarea {
+            height: 110px;
+            resize: none;
+            font-size: 1rem;
+            scrollbar-width: 0;
         }
-
-        .bottom {
-            position: absolute;
-            inset: auto 0 0 0;
-            height: 3px;
-            background-color: #ffffff8a;
+        & .TextBox__Div textarea::-webkit-scrollbar {
+            width: 0;
         }
-        .bottom::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            transform: scale(0);
-            transform-origin: center;
-            background-color: #ff8400;
-            transition: transform 450ms ease-in-out 350ms;
-        }
-        /* WHEN INPUT IS ON FOCUS OR INPUT HAS SOME TEXT */
-
-        .txtbox:focus ~ .bottom::after,
-        .txtbox:valid ~ .bottom::after {
-            transform: scale(1);
-        }
-        .txtbox:focus + .txt-label,
-        .txtbox:valid + .txt-label {
-            color: #ff8400;
-            font-size: calc(var(--label-size) - 0.4rem);
-            font-size: calc(inherit - 6%);
-            top: 3px;
-        }
-
-        .area {
-            height: 250px;
-
-            .txt-label {
-                height: fit-content;
-            }
-            .txtbox {
-                resize: none;
-                scroll-behavior: smooth;
-                scrollbar-width: 0;
-                &::-webkit-scrollbar {
-                    width: 0;
-                }
-            }
-            .txtbox:focus,
-            .txtbox:valid {
-                padding-top: 20px;
-            }
-        }
-
-        .btn {
-            margin: 0.75rem 0;
-            padding: 0.5rem;
-            font: 700 1.3rem $heading;
-            border: none;
-            outline: none;
-            border-radius: 7px;
+        & .Btn__Send {
             position: relative;
-            z-index: 1;
+            margin: 10px auto;
+            width: 50%;
+            font-weight: 550;
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            font-family: Verdana, sans-serif;
+            border: none;
             color: #ffffff;
-            letter-spacing: 1.3px;
-            width: 265px;
+            border-radius: 6px;
             cursor: pointer;
-            background-color: transparent;
-        }
+            background-color: #ffffff40;
+            overflow: hidden;
 
-        .send {
-            background-color: $secondary-color;
-            box-shadow: 4px 7px 11px rgba(255, 255, 255, 0.65) inset, 5px 8px 15px #0000004b;
+            &::after {
+                position: absolute;
+                content: "";
+                inset: 0;
+                transform: translate(-85px, -50px) rotate(-45deg);
+                background: linear-gradient(to bottom, #ffffff14, rgba(255, 255, 255, 0.25));
+                transition: all 0.58s ease-in-out;
+            }
+            &:hover::after,
+            &:active::after {
+                position: absolute;
+                content: "";
+                inset: 0;
+                transform: translate(85px, 50px) rotate(-45deg);
+            }
         }
     }
-    .social-icons {
-        padding: 5% 3%;
+    & .Social__Icons {
+        height: 40px;
+        width: 350px;
+        margin: 10px 0;
         display: flex;
-        width: 100%;
         justify-content: center;
         align-items: center;
-
-        .fa-brands {
-            padding: 0 3%;
+        & .fa-brands {
+            padding-right: 15px;
+            font-size: 1.2rem;
             cursor: pointer;
-            font-size: 1.3rem;
-
+            color: #ffffff30;
+            transition: all 350ms ease;
             &:hover {
-                filter: drop-shadow(0 0 4px $secondary-hover);
+                transform: scale(1.2);
+                color: #ffffff;
+                text-shadow: 0 0 8px $secondary-color;
             }
         }
     }

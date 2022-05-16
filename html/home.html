@@ -18,7 +18,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-        <!-- JQUERY CDN -->
+    <!-- JQUERY CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <!-- JS LINK -->
     <!-- <script src="/js/menu.js" defer></script> -->
@@ -28,9 +28,8 @@
     <script src="/js/sphere.js" defer></script>
     <!-- ANIMATE JS -->
     <script src="/js/animate.js" defer></script>
-<!-- CSS LINK -->
-    <link rel="stylesheet" href="/style/style.css" />
-
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="../style/style.css" />
   </head>
   <!-- BODY -->
   <body class="dark">
@@ -52,6 +51,7 @@
       </ul>
     </nav> -->
       <section class="details">
+        <!-- <div class="hourglass"></div> -->
         <h3 class="name">I'm Rishikesh</h3>
         <h5 class="tag">Web Developer, Programmer</h5>
       </section>
@@ -130,11 +130,8 @@
         <!--  -->
         <div class="projects">
           <div class="wrap-link">
-            <img
-              class="project-image"
-              src="https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__480.jpg"
-              alt="none"
-            />
+            <!-- src="https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__480.jpg" -->
+            <img class="project-image" src="/images/TicTacToe.png" alt="none" />
             <span class="git-link">
               <a href="#!">
                 <i class="fa-brands fa-github"></i>
@@ -201,32 +198,25 @@
     <!-- CONTACT SECTION -->
     <section class="contact-section">
       <h5>Get in Touch</h5>
-      <form action="">
-        <!-- INPUT SECTION -->
-        <div class="input-div">
-          <input class="txtbox" type="text" name="" id="" required />
-          <label class="txt-label">Enter Name</label>
-          <span class="bottom"></span>
+      <form>
+        <div class="TextBox__Div">
+          <label for="name">Name</label>
+          <input type="text" id="name" />
         </div>
-        <!-- INPUT SECTION -->
-        <div class="input-div">
-          <input class="txtbox" type="text" name="" id="" required />
-          <label class="txt-label">Email-ID</label>
-          <span class="bottom"></span>
+        <div class="TextBox__Div">
+          <label for="email">E-mail</label>
+          <input type="text" id="email" />
         </div>
-        <!-- INPUT SECTION -->
-        <div class="input-div area">
-          <textarea class="txtbox" name="" id="" required></textarea>
-          <label class="txt-label">Message</label>
-          <span class="bottom"></span>
+        <div class="TextBox__Div">
+          <label for="message">Message</label>
+          <textarea id="message" name="" cols="25" rows="6"></textarea>
         </div>
-        
-        <button class="btn send">
+        <button class="Btn__Send">
           <i class="fa-solid fa-paper-plane"></i>
-          SEND
+          Send
         </button>
       </form>
-      <div class="social-icons">
+      <div class="Social__Icons">
         <i class="fa-brands fa-github"></i>
         <i class="fa-brands fa-linkedin"></i>
         <i class="fa-brands fa-instagram"></i>

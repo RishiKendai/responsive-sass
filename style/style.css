@@ -295,10 +295,10 @@ section.home {
 }
 
 .languages .wrap-languages .programs .lang-round:hover {
+  color: #fff;
+  text-shadow: 1px 1px 8px #8547c2;
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  -webkit-box-shadow: 24px 26px 82px #00000066;
-          box-shadow: 24px 26px 82px #00000066;
 }
 
 .languages .wrap-languages .programs .lang-round::after {
@@ -314,8 +314,8 @@ section.home {
 }
 
 .languages .wrap-languages .programs .lang-round:hover::after {
-  -webkit-box-shadow: 4px 5px 12px inset #ffffff83,  4px 5px 12px inset #ffffff73, -5px -8px 12px inset transparent,  -5px -8px 12px inset transparent;
-          box-shadow: 4px 5px 12px inset #ffffff83,  4px 5px 12px inset #ffffff73, -5px -8px 12px inset transparent,  -5px -8px 12px inset transparent;
+  -webkit-box-shadow: 4px 5px 12px inset #ffffff83,  4px 5px 12px inset #ffffff85, -5px -8px 12px inset transparent,  -5px -8px 12px inset transparent;
+          box-shadow: 4px 5px 12px inset #ffffff83,  4px 5px 12px inset #ffffff85, -5px -8px 12px inset transparent,  -5px -8px 12px inset transparent;
 }
 
 .languages .wrap-languages .programs .progress-bar {
@@ -371,6 +371,14 @@ section.home {
 }
 
 .contact-section form {
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(18px);
+  border-radius: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  -webkit-backdrop-filter: blur(18px);
+  width: 350px;
+  height: 420px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -378,145 +386,98 @@ section.home {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  /* INPUT SECTION */
-  /* WHEN INPUT IS ON FOCUS OR INPUT HAS SOME TEXT */
 }
 
-.contact-section form .input-div {
-  background-color: rgba(0, 0, 0, 0.35);
-  -webkit-box-shadow: 1px 14px 20px #00000069;
-          box-shadow: 1px 14px 20px #00000069;
-  height: 50px;
-  width: 265px;
-  color: var(--text-50);
-  position: relative;
-  border-radius: 5px;
-  overflow: hidden;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  padding: 0 0.4rem 0 0.4rem;
-  margin: 15px 0;
-}
-
-.contact-section form .txtbox {
-  border: none;
-  outline: none;
-  height: 100%;
-  width: 100%;
-  color: var(--text-75);
-  padding-top: 10px;
-  font-size: 1.2rem;
-  font-family: "Poppins", sans-serif;
-  background: none;
-}
-
-.contact-section form .txt-label {
-  --label-size: 1.1rem;
-  font: 700 var(--label-size) "Poppins", sans-serif;
-  position: absolute;
-  inset: 18px 0 0 9px;
-  pointer-events: none;
-  -webkit-transition: all 450ms ease-in-out 250ms;
-  transition: all 450ms ease-in-out 250ms;
-}
-
-.contact-section form .bottom {
-  position: absolute;
-  inset: auto 0 0 0;
-  height: 3px;
-  background-color: #ffffff8a;
-}
-
-.contact-section form .bottom::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-transform-origin: center;
-          transform-origin: center;
-  background-color: #ff8400;
-  -webkit-transition: -webkit-transform 450ms ease-in-out 350ms;
-  transition: -webkit-transform 450ms ease-in-out 350ms;
-  transition: transform 450ms ease-in-out 350ms;
-  transition: transform 450ms ease-in-out 350ms, -webkit-transform 450ms ease-in-out 350ms;
-}
-
-.contact-section form .txtbox:focus ~ .bottom::after,
-.contact-section form .txtbox:valid ~ .bottom::after {
-  -webkit-transform: scale(1);
-          transform: scale(1);
-}
-
-.contact-section form .txtbox:focus + .txt-label,
-.contact-section form .txtbox:valid + .txt-label {
-  color: #ff8400;
-  font-size: calc(var(--label-size) - 0.4rem);
-  font-size: calc(inherit - 6%);
-  top: 3px;
-}
-
-.contact-section form .area {
-  height: 250px;
-}
-
-.contact-section form .area .txt-label {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-}
-
-.contact-section form .area .txtbox {
-  resize: none;
-  scroll-behavior: smooth;
-  scrollbar-width: 0;
-}
-
-.contact-section form .area .txtbox::-webkit-scrollbar {
-  width: 0;
-}
-
-.contact-section form .area .txtbox:focus,
-.contact-section form .area .txtbox:valid {
-  padding-top: 20px;
-}
-
-.contact-section form .btn {
-  margin: 0.75rem 0;
-  padding: 0.5rem;
-  font: 700 1.3rem "Montserrat", sans-serif;
-  border: none;
-  outline: none;
-  border-radius: 7px;
-  position: relative;
-  z-index: 1;
-  color: #ffffff;
-  letter-spacing: 1.3px;
-  width: 265px;
-  cursor: pointer;
-  background-color: transparent;
-}
-
-.contact-section form .send {
-  background-color: #8547c2;
-  -webkit-box-shadow: 4px 7px 11px rgba(255, 255, 255, 0.65) inset, 5px 8px 15px #0000004b;
-          box-shadow: 4px 7px 11px rgba(255, 255, 255, 0.65) inset, 5px 8px 15px #0000004b;
-}
-
-.contact-section .social-icons {
-  padding: 5% 3%;
+.contact-section form .TextBox__Div {
+  width: 85%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 15px 0 5px;
+}
+
+.contact-section form .TextBox__Div label {
+  font: 1.1rem "Noto Serif", serif;
+  letter-spacing: 1.2px;
+  color: #b894db;
+  font-weight: 550;
+  margin-bottom: 5px;
+}
+
+.contact-section form .TextBox__Div input,
+.contact-section form .TextBox__Div textarea {
+  padding: 5px;
+  height: 40px;
+  font: 1rem "Poppins", sans-serif;
+  letter-spacing: 1.2px;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  background-color: rgba(0, 0, 0, 0.18);
+  border-radius: 5px;
+  outline: none;
+  color: #ffffffaf;
+}
+
+.contact-section form .TextBox__Div textarea {
+  height: 110px;
+  resize: none;
+  font-size: 1rem;
+  scrollbar-width: 0;
+}
+
+.contact-section form .TextBox__Div textarea::-webkit-scrollbar {
+  width: 0;
+}
+
+.contact-section form .Btn__Send {
+  position: relative;
+  margin: 10px auto;
+  width: 50%;
+  font-weight: 550;
+  font-size: 1.1rem;
+  padding: 8px 15px;
+  font-family: Verdana, sans-serif;
+  border: none;
+  color: #ffffff;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #ffffff40;
+  overflow: hidden;
+}
+
+.contact-section form .Btn__Send::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  -webkit-transform: translate(-85px, -50px) rotate(-45deg);
+          transform: translate(-85px, -50px) rotate(-45deg);
+  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff14), to(rgba(255, 255, 255, 0.25)));
+  background: linear-gradient(to bottom, #ffffff14, rgba(255, 255, 255, 0.25));
+  -webkit-transition: all 0.58s ease-in-out;
+  transition: all 0.58s ease-in-out;
+}
+
+.contact-section form .Btn__Send:hover::after, .contact-section form .Btn__Send:active::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  -webkit-transform: translate(85px, 50px) rotate(-45deg);
+          transform: translate(85px, 50px) rotate(-45deg);
+}
+
+.contact-section .Social__Icons {
+  height: 40px;
+  width: 350px;
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -525,15 +486,20 @@ section.home {
           align-items: center;
 }
 
-.contact-section .social-icons .fa-brands {
-  padding: 0 3%;
+.contact-section .Social__Icons .fa-brands {
+  padding-right: 15px;
+  font-size: 1.2rem;
   cursor: pointer;
-  font-size: 1.3rem;
+  color: #ffffff30;
+  -webkit-transition: all 350ms ease;
+  transition: all 350ms ease;
 }
 
-.contact-section .social-icons .fa-brands:hover {
-  -webkit-filter: drop-shadow(0 0 4px #b894db);
-          filter: drop-shadow(0 0 4px #b894db);
+.contact-section .Social__Icons .fa-brands:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  color: #ffffff;
+  text-shadow: 0 0 8px #8547c2;
 }
 
 .project-section {
@@ -602,6 +568,7 @@ section.home {
   height: 180px;
   width: 100%;
   position: relative;
+  background-size: cover;
 }
 
 .project-section .wrap-projects .projects .wrap-link::after {
@@ -670,6 +637,260 @@ section.home {
   background: #ebb7e2;
   width: 3px;
   border-radius: 5px;
+}
+
+:root {
+  --bg: #e3e4e8;
+  --fg: #2e3138;
+  --primary: #255ff4;
+  font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+}
+
+.hourglass,
+.hourglass:before,
+.hourglass:after {
+  -webkit-animation-duration: 10s;
+          animation-duration: 10s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.hourglass {
+  --polygonH: polygon(
+  0% 0%,
+  100% 0%,
+  100% 5.55%,
+  95% 5.55%,
+  95% 28%,
+  60% 46%,
+  60% 54%,
+  95% 72%,
+  95% 94.45%,
+  100% 94.45%,
+  100% 100%,
+  0% 100%,
+  0% 94.45%,
+  5% 94.45%,
+  5% 72%,
+  40% 54%,
+  40% 46%,
+  5% 28%,
+  5% 5.55%,
+  0% 5.55%
+ );
+  -webkit-animation-name: flip;
+          animation-name: flip;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5em, var(--primary)), color-stop(0.5em, #737a8c55), color-stop(8.5em, var(--primary)));
+  background-image: linear-gradient(var(--primary) 0.5em, #737a8c55 0.5em 8.5em, var(--primary) 8.5em);
+  clip-path: var(--polygonH);
+  -webkit-clip-path: var(--polygonH);
+  overflow: hidden;
+  position: absolute;
+  width: 5em;
+  height: 9em;
+  z-index: -1;
+}
+
+.hourglass:before,
+.hourglass:after {
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  content: "";
+  display: block;
+  position: absolute;
+}
+
+.hourglass:before {
+  --polygonB1: polygon(
+  0% 0%,
+  100% 0%,
+  100% 24%,
+  50% 47%,
+  50% 47%,
+  50% 47%,
+  50% 47%,
+  50% 47%,
+  50% 47%,
+  50% 47%,
+  50% 47%,
+  0% 24%
+ );
+  --polygonB2: polygon(
+  0% 4%,
+  100% 4%,
+  100% 24%,
+  55% 45%,
+  55% 100%,
+  55% 100%,
+  55% 100%,
+  45% 100%,
+  45% 100%,
+  45% 100%,
+  45% 45%,
+  0% 24%
+ );
+  --polygonB3: polygon(
+  0% 24%,
+  100% 24%,
+  100% 24%,
+  55% 45%,
+  55% 80%,
+  100% 100%,
+  100% 100%,
+  0% 100%,
+  0% 100%,
+  45% 80%,
+  45% 45%,
+  0% 24%
+ );
+  --polygonB4: polygon(
+  45% 45%,
+  55% 45%,
+  55% 45%,
+  55% 45%,
+  55% 58%,
+  100% 76%,
+  100% 100%,
+  0% 100%,
+  0% 76%,
+  45% 58%,
+  45% 45%,
+  45% 45%
+ );
+  --polygonB5: polygon(
+  50% 53%,
+  50% 53%,
+  50% 53%,
+  50% 53%,
+  50% 53%,
+  100% 76%,
+  100% 100%,
+  0% 100%,
+  0% 76%,
+  50% 53%,
+  50% 53%,
+  50% 53%
+ );
+  -webkit-animation-name: fill;
+          animation-name: fill;
+  background-color: var(--fg);
+  background-size: 100% 3.6em;
+  clip-path: var(--polygonB1);
+  -webkit-clip-path: var(--polygonB1);
+  top: 0.5em;
+  left: 0.5em;
+  width: 4em;
+  height: 8em;
+  z-index: 1;
+}
+
+.hourglass:after {
+  -webkit-animation-name: glare;
+          animation-name: glare;
+  background-repeat: repeat-x;
+  top: 0;
+  left: -3em;
+  width: 200%;
+  height: 100%;
+  z-index: 2;
+}
+
+/* Animations */
+@-webkit-keyframes fill {
+  from {
+    clip-path: var(--polygonB1);
+    -webkit-clip-path: var(--polygonB1);
+  }
+  10% {
+    clip-path: var(--polygonB2);
+    -webkit-clip-path: var(--polygonB2);
+  }
+  45% {
+    clip-path: var(--polygonB3);
+    -webkit-clip-path: var(--polygonB3);
+  }
+  80% {
+    clip-path: var(--polygonB4);
+    -webkit-clip-path: var(--polygonB4);
+  }
+  85%,
+  to {
+    clip-path: var(--polygonB5);
+    -webkit-clip-path: var(--polygonB5);
+  }
+}
+@keyframes fill {
+  from {
+    clip-path: var(--polygonB1);
+    -webkit-clip-path: var(--polygonB1);
+  }
+  10% {
+    clip-path: var(--polygonB2);
+    -webkit-clip-path: var(--polygonB2);
+  }
+  45% {
+    clip-path: var(--polygonB3);
+    -webkit-clip-path: var(--polygonB3);
+  }
+  80% {
+    clip-path: var(--polygonB4);
+    -webkit-clip-path: var(--polygonB4);
+  }
+  85%,
+  to {
+    clip-path: var(--polygonB5);
+    -webkit-clip-path: var(--polygonB5);
+  }
+}
+
+@-webkit-keyframes glare {
+  from,
+  90% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(3em);
+            transform: translateX(3em);
+  }
+}
+
+@keyframes glare {
+  from,
+  90% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(3em);
+            transform: translateX(3em);
+  }
+}
+
+@-webkit-keyframes flip {
+  from,
+  90% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
+}
+
+@keyframes flip {
+  from,
+  90% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+  }
 }
 
 body {
