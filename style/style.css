@@ -94,13 +94,14 @@ section.home {
 
 .name {
   color: var(--text-75);
-  font: italic 4rem "Oleo Script Swash Caps", cursive;
+  font: italic 6rem "Caveat", cursive;
   letter-spacing: 1.2px;
 }
 
 .tag {
   color: var(--text-50);
   font: 700 1.3rem "Noto Serif", serif;
+  font: italic 1.8rem "Oleo Script Swash Caps", cursive;
 }
 
 .home .details {
@@ -314,8 +315,8 @@ section.home {
 }
 
 .languages .wrap-languages .programs .lang-round:hover::after {
-  -webkit-box-shadow: 4px 5px 12px inset #ffffff83,  4px 5px 12px inset #ffffff85, -5px -8px 12px inset transparent,  -5px -8px 12px inset transparent;
-          box-shadow: 4px 5px 12px inset #ffffff83,  4px 5px 12px inset #ffffff85, -5px -8px 12px inset transparent,  -5px -8px 12px inset transparent;
+  -webkit-box-shadow: 4px 5px 12px inset #ffffff83, 4px 5px 12px inset #ffffff85, -5px -8px 12px inset transparent, -5px -8px 12px inset transparent;
+          box-shadow: 4px 5px 12px inset #ffffff83, 4px 5px 12px inset #ffffff85, -5px -8px 12px inset transparent, -5px -8px 12px inset transparent;
 }
 
 .languages .wrap-languages .programs .progress-bar {
@@ -333,6 +334,46 @@ section.home {
   display: block;
   width: 0;
   background-color: #8547c2;
+}
+
+@media screen and (min-width: 595px) {
+  .languages .wrap-languages .programs .lang-round {
+    font-size: 1rem;
+    height: 150px;
+    width: 150px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .about-me p {
+    width: 85%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .about-me {
+    position: relative;
+  }
+  .about-me p {
+    width: 72%;
+  }
+  .about-me:after {
+    position: absolute;
+    content: "Me";
+    font: 800 6rem "Caveat", cursive;
+    inset: 0 0 0 87%;
+    right: 0;
+    color: rgba(255, 255, 255, 0.05);
+  }
+  .languages .wrap-languages {
+    -ms-grid-columns: (auto)[4];
+        grid-template-columns: repeat(4, auto);
+  }
+  .languages .wrap-languages .programs .lang-round {
+    font-size: 22px;
+    height: 170px;
+    width: 170px;
+  }
 }
 
 .contact-section {
@@ -353,19 +394,8 @@ section.home {
           align-items: center;
 }
 
-.contact-section::before {
-  content: "@";
-  position: absolute;
-  inset: 25% auto auto 15%;
-  color: rgba(255, 255, 255, 0.14);
-  -webkit-transform: translate(-50%, -40%) rotate(-40deg);
-          transform: translate(-50%, -40%) rotate(-40deg);
-  z-index: -1;
-  font: 700 11rem "Montserrat", sans-serif;
-}
-
 .contact-section h5 {
-  font: 600 2rem "Montserrat", sans-serif;
+  font: 700 3.5rem "Caveat", cursive;
   color: #8547c2;
   margin-bottom: 3%;
 }
@@ -500,6 +530,114 @@ section.home {
           transform: scale(1.2);
   color: #ffffff;
   text-shadow: 0 0 8px #8547c2;
+}
+
+.contact-section .Contact__Icons {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+
+.contact-section .Contact__Icons .fa-solid {
+  position: absolute;
+  font-size: 6rem;
+  color: rgba(255, 255, 255, 0.04);
+}
+
+.contact-section .Contact__Icons .fa-at {
+  top: 35%;
+  left: 30px;
+  -webkit-transform: rotate(-35deg);
+          transform: rotate(-35deg);
+}
+
+.contact-section .Contact__Icons .fa-envelope {
+  top: 35%;
+  right: 30px;
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+
+.contact-section .Contact__Icons .fa-phone {
+  top: 70%;
+  left: 30px;
+  -webkit-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+}
+
+.contact-section .Contact__Icons .fa-mobile-screen-button {
+  top: 75%;
+  right: 30px;
+  -webkit-transform: rotate(40deg);
+          transform: rotate(40deg);
+}
+
+.Contact__Icons .fa-solid:nth-child(1) {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-transition-delay: 0.25s;
+          transition-delay: 0.25s;
+}
+
+.Contact__Icons .fa-solid:nth-child(2) {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-transition-delay: 0.35s;
+          transition-delay: 0.35s;
+}
+
+.Contact__Icons .fa-solid:nth-child(3) {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-transition-delay: 0.45s;
+          transition-delay: 0.45s;
+}
+
+.Contact__Icons .fa-solid:nth-child(4) {
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  -webkit-transition-delay: 0.55s;
+          transition-delay: 0.55s;
+}
+
+@-webkit-keyframes color-transition {
+  to {
+    color: #ffffff;
+    -webkit-filter: drop-shadow(0 0 10px #8547c2);
+            filter: drop-shadow(0 0 10px #8547c2);
+  }
+}
+
+@keyframes color-transition {
+  to {
+    color: #ffffff;
+    -webkit-filter: drop-shadow(0 0 10px #8547c2);
+            filter: drop-shadow(0 0 10px #8547c2);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contact-section .Contact__Icons {
+    width: 70%;
+  }
+  .contact-section .Contact__Icons .fa-solid {
+    color: #ffffff;
+    -webkit-filter: drop-shadow(1px 1px 7px #8547c2);
+            filter: drop-shadow(1px 1px 7px #8547c2);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .contact-section .Contact__Icons {
+    width: 57%;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .contact-section .Contact__Icons {
+    width: 62%;
+  }
 }
 
 .project-section {
@@ -639,257 +777,57 @@ section.home {
   border-radius: 5px;
 }
 
-:root {
-  --bg: #e3e4e8;
-  --fg: #2e3138;
-  --primary: #255ff4;
-  font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
-}
-
-.hourglass,
-.hourglass:before,
-.hourglass:after {
-  -webkit-animation-duration: 10s;
-          animation-duration: 10s;
-  -webkit-animation-iteration-count: infinite;
-          animation-iteration-count: infinite;
-}
-
-.hourglass {
-  --polygonH: polygon(
-  0% 0%,
-  100% 0%,
-  100% 5.55%,
-  95% 5.55%,
-  95% 28%,
-  60% 46%,
-  60% 54%,
-  95% 72%,
-  95% 94.45%,
-  100% 94.45%,
-  100% 100%,
-  0% 100%,
-  0% 94.45%,
-  5% 94.45%,
-  5% 72%,
-  40% 54%,
-  40% 46%,
-  5% 28%,
-  5% 5.55%,
-  0% 5.55%
- );
-  -webkit-animation-name: flip;
-          animation-name: flip;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0.5em, var(--primary)), color-stop(0.5em, #737a8c55), color-stop(8.5em, var(--primary)));
-  background-image: linear-gradient(var(--primary) 0.5em, #737a8c55 0.5em 8.5em, var(--primary) 8.5em);
-  clip-path: var(--polygonH);
-  -webkit-clip-path: var(--polygonH);
-  overflow: hidden;
-  position: absolute;
-  width: 5em;
-  height: 9em;
-  z-index: -1;
-}
-
-.hourglass:before,
-.hourglass:after {
-  -webkit-animation-timing-function: linear;
-          animation-timing-function: linear;
-  content: "";
-  display: block;
-  position: absolute;
-}
-
-.hourglass:before {
-  --polygonB1: polygon(
-  0% 0%,
-  100% 0%,
-  100% 24%,
-  50% 47%,
-  50% 47%,
-  50% 47%,
-  50% 47%,
-  50% 47%,
-  50% 47%,
-  50% 47%,
-  50% 47%,
-  0% 24%
- );
-  --polygonB2: polygon(
-  0% 4%,
-  100% 4%,
-  100% 24%,
-  55% 45%,
-  55% 100%,
-  55% 100%,
-  55% 100%,
-  45% 100%,
-  45% 100%,
-  45% 100%,
-  45% 45%,
-  0% 24%
- );
-  --polygonB3: polygon(
-  0% 24%,
-  100% 24%,
-  100% 24%,
-  55% 45%,
-  55% 80%,
-  100% 100%,
-  100% 100%,
-  0% 100%,
-  0% 100%,
-  45% 80%,
-  45% 45%,
-  0% 24%
- );
-  --polygonB4: polygon(
-  45% 45%,
-  55% 45%,
-  55% 45%,
-  55% 45%,
-  55% 58%,
-  100% 76%,
-  100% 100%,
-  0% 100%,
-  0% 76%,
-  45% 58%,
-  45% 45%,
-  45% 45%
- );
-  --polygonB5: polygon(
-  50% 53%,
-  50% 53%,
-  50% 53%,
-  50% 53%,
-  50% 53%,
-  100% 76%,
-  100% 100%,
-  0% 100%,
-  0% 76%,
-  50% 53%,
-  50% 53%,
-  50% 53%
- );
-  -webkit-animation-name: fill;
-          animation-name: fill;
-  background-color: var(--fg);
-  background-size: 100% 3.6em;
-  clip-path: var(--polygonB1);
-  -webkit-clip-path: var(--polygonB1);
-  top: 0.5em;
-  left: 0.5em;
-  width: 4em;
-  height: 8em;
-  z-index: 1;
-}
-
-.hourglass:after {
-  -webkit-animation-name: glare;
-          animation-name: glare;
-  background-repeat: repeat-x;
-  top: 0;
-  left: -3em;
-  width: 200%;
-  height: 100%;
-  z-index: 2;
-}
-
-/* Animations */
-@-webkit-keyframes fill {
-  from {
-    clip-path: var(--polygonB1);
-    -webkit-clip-path: var(--polygonB1);
+@media screen and (min-width: 640px) {
+  .project-section .wrap-projects .projects {
+    width: 70%;
   }
-  10% {
-    clip-path: var(--polygonB2);
-    -webkit-clip-path: var(--polygonB2);
-  }
-  45% {
-    clip-path: var(--polygonB3);
-    -webkit-clip-path: var(--polygonB3);
-  }
-  80% {
-    clip-path: var(--polygonB4);
-    -webkit-clip-path: var(--polygonB4);
-  }
-  85%,
-  to {
-    clip-path: var(--polygonB5);
-    -webkit-clip-path: var(--polygonB5);
-  }
-}
-@keyframes fill {
-  from {
-    clip-path: var(--polygonB1);
-    -webkit-clip-path: var(--polygonB1);
-  }
-  10% {
-    clip-path: var(--polygonB2);
-    -webkit-clip-path: var(--polygonB2);
-  }
-  45% {
-    clip-path: var(--polygonB3);
-    -webkit-clip-path: var(--polygonB3);
-  }
-  80% {
-    clip-path: var(--polygonB4);
-    -webkit-clip-path: var(--polygonB4);
-  }
-  85%,
-  to {
-    clip-path: var(--polygonB5);
-    -webkit-clip-path: var(--polygonB5);
+  .project-section .wrap-projects .projects .wrap-link .project-image {
+    height: 240px;
+    width: 100%;
   }
 }
 
-@-webkit-keyframes glare {
-  from,
-  90% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+@media screen and (min-width: 768px) {
+  .project-section .Project__Description {
+    width: 85%;
   }
-  to {
-    -webkit-transform: translateX(3em);
-            transform: translateX(3em);
+  .project-section .wrap-projects .projects {
+    width: 55%;
   }
-}
-
-@keyframes glare {
-  from,
-  90% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  to {
-    -webkit-transform: translateX(3em);
-            transform: translateX(3em);
+  .project-section .wrap-projects .projects .wrap-link .project-image {
+    height: 240px;
+    width: 100%;
   }
 }
 
-@-webkit-keyframes flip {
-  from,
-  90% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
+@media screen and (min-width: 1024px) {
+  .project-section {
+    position: relative;
   }
-  to {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+  .project-section .Project__Description {
+    width: 72%;
   }
-}
-
-@keyframes flip {
-  from,
-  90% {
-    -webkit-transform: rotate(0);
-            transform: rotate(0);
+  .project-section .wrap-projects {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-orient: unset;
+    -webkit-box-direction: unset;
+        -ms-flex-direction: unset;
+            flex-direction: unset;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding: 0 5%;
+    -ms-grid-columns: (400px)[auto-fill];
+        grid-template-columns: repeat(auto-fill, 400px);
+    grid-gap: 25px;
   }
-  to {
-    -webkit-transform: rotate(180deg);
-            transform: rotate(180deg);
+  .project-section .wrap-projects .projects {
+    height: 430px;
+    width: 100%;
+  }
+  .project-section .wrap-projects .projects .wrap-link .project-image {
+    height: 240px;
+    width: 100%;
   }
 }
 

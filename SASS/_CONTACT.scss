@@ -6,18 +6,8 @@
     justify-content: center;
     align-items: center;
 
-    &::before {
-        content: "@";
-        position: absolute;
-        inset: 25% auto auto 15%;
-        color: rgba(255, 255, 255, 0.14);
-        transform: translate(-50%, -40%) rotate(-40deg);
-        z-index: -1;
-        font: 700 11rem $heading;
-    }
-
     & h5 {
-        font: 600 2rem $heading;
+        font: 700 3.5rem $style;
         color: $secondary-color;
         margin-bottom: 3%;
     }
@@ -119,6 +109,79 @@
                 color: #ffffff;
                 text-shadow: 0 0 8px $secondary-color;
             }
+        }
+    }
+    .Contact__Icons {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+
+        & .fa-solid {
+            position: absolute;
+            font-size: 6rem;
+            color: rgba(255, 255, 255, 0.04);
+        }
+        & .fa-at {
+            top: 35%;
+            left: 30px;
+            transform: rotate(-35deg);
+        }
+        & .fa-envelope {
+            top: 35%;
+            right: 30px;
+            transform: rotate(40deg);
+        }
+        & .fa-phone {
+            top: 70%;
+            left: 30px;
+            transform: rotate(-5deg);
+        }
+        & .fa-mobile-screen-button {
+            top: 75%;
+            right: 30px;
+            transform: rotate(40deg);
+        }
+    }
+}
+@for $i from 1 through 4 {
+    .Contact__Icons .fa-solid:nth-child(#{$i}) {
+        transition: all 0.4s ease;
+        // animation: color-transition ease-in 2s ($i * 0.35s) infinite;
+        transition-delay: ($i * 0.1s) + 0.15s;
+    }
+}
+
+@keyframes color-transition {
+    to {
+        color: #ffffff;
+        filter: drop-shadow(0 0 10px $secondary-color);
+    }
+}
+
+@include media-md {
+    .contact-section {
+        .Contact__Icons {
+            width: 70%;            
+            & .fa-solid {
+                color: #ffffff;
+                filter: drop-shadow(1px 1px 7px $secondary-color);
+            }
+
+        }
+    }
+}
+@include media-lg {
+    .contact-section {
+        .Contact__Icons {
+            width: 57%;
+        }
+    }
+}
+@include media-xl {
+    .contact-section {
+        .Contact__Icons {
+            width: 62%;
         }
     }
 }

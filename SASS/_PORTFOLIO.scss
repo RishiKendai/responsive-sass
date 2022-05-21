@@ -82,7 +82,7 @@
                     color: #fff;
                     text-shadow: 1px 1px 8px $secondary-color;
                     transform: scale(1.1);
-                    // box-shadow: 24px 26px 82px #00000066;                    
+                    // box-shadow: 24px 26px 82px #00000066;
                 }
 
                 &::after {
@@ -98,11 +98,8 @@
                 }
 
                 &:hover::after {
-                    box-shadow: 
-                    4px 5px 12px inset #ffffff83, 
-                    4px 5px 12px inset #ffffff85,
-                   -5px -8px 12px inset transparent, 
-                   -5px -8px 12px inset transparent;
+                    box-shadow: 4px 5px 12px inset #ffffff83, 4px 5px 12px inset #ffffff85,
+                        -5px -8px 12px inset transparent, -5px -8px 12px inset transparent;
                 }
             }
 
@@ -124,4 +121,56 @@
             }
         }
     }
+}
+
+@media screen and (min-width:595px) {
+    .languages {
+        & .wrap-languages {
+            .programs {
+                .lang-round {
+                    font-size: 1rem;
+                    height: 150px;
+                    width: 150px;
+                }
+            }
+        }
+    }
+    
+}
+
+@include media-md {
+    .about-me {
+        p {
+            width: 85%;
+        }
+    }
+}
+@include media-lg {
+    .about-me {
+        p {
+            width: 72%;
+        }
+        position: relative;
+        &:after {
+            position: absolute;
+            content: "Me";
+            font: 800 6rem $style;
+            inset: 0 0 0 87%;
+            right: 0;
+            color: rgba(255, 255, 255, 0.05);
+        }
+    }
+        .languages {
+        & .wrap-languages {
+            grid-template-columns: repeat(4, auto);
+            .programs {
+                .lang-round {
+                    font-size: 22px;
+                    height: 170px;
+                    width: 170px;
+                }
+            }
+        }
+    }
+
 }

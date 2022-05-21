@@ -6,13 +6,14 @@ section.home {
 }
 .name {
     color: var(--text-75);
-    font: italic 4rem "Oleo Script Swash Caps", cursive;
+    font:italic 6rem $style;
     letter-spacing: 1.2px;
 }
 
 .tag {
     color: var(--text-50);
     font: 700 1.3rem $title;
+    font: italic 1.8rem "Oleo Script Swash Caps", cursive;
 }
 
 .home .details {
