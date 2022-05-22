@@ -13,7 +13,7 @@
         transform: translate(15%, 30%);
         background-repeat: no-repeat;
         background-size: cover;
-        background: url(/images/Mobile__Wave.png);
+        background: url(../images/Mobile__Wave.png);
     }
     &::after {
         content: "";
@@ -183,9 +183,6 @@
         &::before {
             transform: translate(25%, 20%);
         }
-        &::after {
-            transform: translate(-50%, -35%);
-        }
     }
 }
 
@@ -211,14 +208,11 @@
 }
 @include media-lg {
     .Contact__Section {
-        height: 100vh;
         padding: 15px 5%;
         &::before {
-            // transform: translate(15%, 30%);
             transform: translate(0);
         }
         &::after {
-            // transform: translate(-50%, -35%);
             transform: translate(-50%, -35%);
         }
         & .Contact__Div {
@@ -227,7 +221,6 @@
             &-Left {
                 padding: 8% 0;
                 flex: 3 3 150px;
-                // background-color: lavender;
                 & .Content {
                     margin-bottom: 15px;
                     & h4 {

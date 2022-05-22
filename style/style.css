@@ -395,7 +395,7 @@ section.home {
           transform: translate(15%, 30%);
   background-repeat: no-repeat;
   background-size: cover;
-  background: url(/images/Mobile__Wave.png);
+  background: url(../images/Mobile__Wave.png);
 }
 
 .Contact__Section::after {
@@ -618,10 +618,6 @@ section.home {
     -webkit-transform: translate(25%, 20%);
             transform: translate(25%, 20%);
   }
-  .Contact__Section::after {
-    -webkit-transform: translate(-50%, -35%);
-            transform: translate(-50%, -35%);
-  }
 }
 
 @media screen and (min-width: 768px) {
@@ -645,7 +641,6 @@ section.home {
 
 @media screen and (min-width: 1024px) {
   .Contact__Section {
-    height: 100vh;
     padding: 15px 5%;
   }
   .Contact__Section::before {
