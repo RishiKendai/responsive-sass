@@ -93,7 +93,7 @@ section.home {
 
 .name {
   color: var(--text-75);
-  font: italic 6rem "Caveat", cursive;
+  font: italic 5rem "Caveat", cursive;
   letter-spacing: 1.2px;
 }
 
@@ -387,15 +387,13 @@ section.home {
 .Contact__Section::before {
   content: "";
   position: absolute;
+  background: url(../images/Mobile_Wave.png);
   bottom: 0;
   right: 0;
-  height: 503px;
-  width: 1057px;
-  -webkit-transform: translate(15%, 30%);
-          transform: translate(15%, 30%);
+  height: 405px;
+  width: 980px;
   background-repeat: no-repeat;
-  background-size: cover;
-  background: url(../images/Mobile__Wave.png);
+  z-index: -1;
 }
 
 .Contact__Section::after {
@@ -405,8 +403,8 @@ section.home {
   left: 0;
   -webkit-transform: translate(-50%, -35%);
           transform: translate(-50%, -35%);
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: 250px;
   border-radius: 50%;
   background-color: #8745f870;
   z-index: -1;
@@ -465,7 +463,6 @@ section.home {
 .Contact__Section .Contact__Div-Left .Social__Icons .Icons__Box {
   margin: 0 18px 0 0;
   cursor: pointer;
-  z-index: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -485,15 +482,21 @@ section.home {
           box-shadow: 4px 4px 9px inset rgba(255, 255, 255, 0.65), 5px 5px 10px rgba(0, 0, 0, 0.41);
 }
 
+.Contact__Section .Contact__Div-Left .Social__Icons .Icons__Box a {
+  all: unset;
+  cursor: pointer;
+}
+
 .Contact__Section .Contact__Div-Left .Social__Icons .Icons__Box .fa-brands {
   font-size: 1.6rem;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
-.Contact__Section .Contact__Div-Left .Social__Icons .Icons__Box:hover .fa-brands {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
+.Contact__Section .Contact__Div-Left .Social__Icons .Icons__Box:active .fa-brands {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+  color: #b894db;
   -webkit-filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.56));
           filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.56));
 }
@@ -514,9 +517,10 @@ section.home {
 
 .Contact__Section .Contact__Div main .Icons .fa-solid {
   margin: 18px 0;
-  font-size: 1.2rem;
-  -webkit-filter: drop-shadow(1px 1px 8px rgba(131, 9, 251, 0.94));
-          filter: drop-shadow(1px 1px 8px rgba(131, 9, 251, 0.94));
+  font-size: 4.2rem;
+  color: #ffffff03;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
 }
 
 .Contact__Section .Contact__Div-right form {
@@ -539,6 +543,7 @@ section.home {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: -3;
 }
 
 .Contact__Section .Contact__Div-right form .TextBox__Div {
@@ -556,7 +561,7 @@ section.home {
 .Contact__Section .Contact__Div-right form .TextBox__Div label {
   font: 1.1rem "Noto Serif", serif;
   letter-spacing: 1.2px;
-  color: #b894db;
+  color: #c940b2;
   font-weight: 550;
   margin-bottom: 5px;
 }
@@ -574,6 +579,12 @@ section.home {
   color: #ffffff;
 }
 
+.Contact__Section .Contact__Div-right form .TextBox__Div input:focus,
+.Contact__Section .Contact__Div-right form .TextBox__Div textarea:focus {
+  border: 1px solid #fac7f2;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
 .Contact__Section .Contact__Div-right form .TextBox__Div textarea {
   height: 110px;
   resize: none;
@@ -586,6 +597,7 @@ section.home {
 }
 
 .Contact__Section .Contact__Div-right form .Btn__Send {
+  outline: none;
   position: relative;
   margin: 10px auto;
   font-weight: 550;
@@ -594,36 +606,70 @@ section.home {
   font-family: Verdana, sans-serif;
   border: none;
   color: #ffffff;
-  border-radius: 6px;
+  border-radius: 5px;
   cursor: pointer;
-  background-color: #ffffff40;
-  background-color: #b894db;
+  background-color: #c940b2;
+  -webkit-transition: all 0.34s;
+  transition: all 0.34s;
 }
 
-.Contact__Section .Contact__Div-right form .Btn__Send::after {
-  position: absolute;
-  content: "";
-  inset: 0;
-  z-index: -1;
-  border-radius: 6px;
-  background-color: #b894db;
-  -webkit-transform: translateY(3px);
-          transform: translateY(3px);
-  -webkit-filter: blur(4px);
-          filter: blur(4px);
+.Contact__Section .Contact__Div-right form .Btn__Send:active {
+  -webkit-transform: scale(0.97);
+          transform: scale(0.97);
+}
+
+.Contact__Section .Contact__Div-right .Message__Box {
+  width: 350px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 10px;
+  border-radius: 7px;
+  background-color: #fcb5ba;
+  margin-bottom: 15px;
+  opacity: 0;
+  -webkit-transform: translateY(25px);
+          transform: translateY(25px);
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.Contact__Section .Contact__Div-right .Message__Box.show {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.Contact__Section .Contact__Div-right .Message__Box .Message__Content {
+  word-wrap: break-word;
+  margin: auto;
+  color: #92242f;
+  font: 1.1rem "Poppins", sans-serif;
 }
 
 @media screen and (min-width: 508px) {
   .Contact__Section::before {
-    -webkit-transform: translate(25%, 20%);
-            transform: translate(25%, 20%);
+    height: 405px;
+    width: 1080px;
+    -webkit-transform: translate(5%, 0);
+            transform: translate(5%, 0);
+  }
+  .Contact__Section::after {
+    height: 350px;
+    width: 350px;
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 854px) {
+  .Contact__Section {
+    height: 100vh;
+  }
   .Contact__Section::before {
-    -webkit-transform: translate(5%, 10%);
-            transform: translate(5%, 10%);
+    background: url(../images/Web__Wave.png);
+    -webkit-transform: translate(5%, 0);
+            transform: translate(5%, 0);
+    height: 653px;
+    width: 3160px;
   }
   .Contact__Section::after {
     height: 400px;
@@ -631,21 +677,43 @@ section.home {
     -webkit-transform: translate(-50%, -35%);
             transform: translate(-50%, -35%);
   }
+  .Contact__Section .Contact__Div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
   .Contact__Section .Contact__Div-Left {
-    padding: 8% 0 8% 10%;
+    padding: 8% 0 8% 4%;
   }
   .Contact__Section .Contact__Div-Left .Content {
     width: 450px;
+  }
+  .Contact__Section .Contact__Div-right form .Btn__Send:hover {
+    -webkit-transform: translateY(-4px);
+            transform: translateY(-4px);
+    -webkit-box-shadow: 0 8px 12px #00000028;
+            box-shadow: 0 8px 12px #00000028;
+  }
+  .Contact__Section .Contact__Div-right form .Btn__Send:active {
+    -webkit-transform: translateY(-4px) scale(0.97);
+            transform: translateY(-4px) scale(0.97);
   }
 }
 
 @media screen and (min-width: 1024px) {
   .Contact__Section {
+    height: 100vh;
     padding: 15px 5%;
   }
   .Contact__Section::before {
-    -webkit-transform: translate(0);
-            transform: translate(0);
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0);
+    height: 653px;
+    width: 3160px;
   }
   .Contact__Section::after {
     -webkit-transform: translate(-50%, -35%);
@@ -661,7 +729,7 @@ section.home {
             flex-direction: row;
   }
   .Contact__Section .Contact__Div-Left {
-    padding: 8% 0;
+    padding: 3% 0 8%;
     -webkit-box-flex: 3;
         -ms-flex: 3 3 150px;
             flex: 3 3 150px;
@@ -671,19 +739,17 @@ section.home {
   }
   .Contact__Section .Contact__Div-Left .Content h4 {
     font-size: 4rem;
-    font-family: "Caveat", cursive;
     color: rgba(255, 255, 255, 0.85);
   }
   .Contact__Section .Contact__Div-Left .Content p {
-    font-family: "Poppins", sans-serif;
     font-size: 1.5rem;
     color: rgba(255, 255, 255, 0.55);
   }
   .Contact__Section .Contact__Div main {
     width: 100%;
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    -webkit-box-flex: 1.5;
+        -ms-flex: 1.5 1 auto;
+            flex: 1.5 1 auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

@@ -28,6 +28,10 @@
     <script src="../js/sphere.js" defer></script>
     <!-- ANIMATE JS -->
     <script src="../js/animate.js" defer></script>
+    <!-- SMTP.JS -->
+    <script src="https://smtpjs.com/v3/smtp.js" defer></script>
+    <!-- CONTACT JS -->
+    <script src="../js/contact.js" defer></script>
     <!-- CSS LINK -->
     <link rel="stylesheet" href="../style/style.css" />
   </head>
@@ -137,7 +141,10 @@
               alt="none"
             />
             <span class="git-link">
-              <a href="#!">
+              <a
+                href="https://github.com/RishiKendai/TicTacToe"
+                target="_blank"
+              >
                 <i class="fa-brands fa-github"></i>
                 Link
               </a>
@@ -211,13 +218,22 @@
           <!-- SOCIAL -->
           <div class="Social__Icons">
             <div class="Icons__Box">
-              <i class="fa-brands fa-github"></i>
+              <a href="https://github.com/RishiKendai" target="_blank">
+                <i class="fa-brands fa-github"></i>
+              </a>
             </div>
             <div class="Icons__Box">
-              <i class="fa-brands fa-linkedin"></i>
+              <a
+                href="https://www.linkedin.com/in/rishi-kesh-a459b2196"
+                target="_blank"
+              >
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
             </div>
             <div class="Icons__Box">
-              <i class="fa-brands fa-instagram"></i>
+              <a href="https://www.instagram.com/i_rishi.kesh/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
             </div>
           </div>
         </aside>
@@ -230,20 +246,30 @@
           </div>
         </main>
         <aside class="Contact__Div-right">
-          <form>
+          <div class="Message__Box" selector="Message__Box">
+            <p class="Message__Content" selector="Message__Content"></p>
+          </div>
+          <form action="https://formsubmit.co/432e77985e56efd1316d619903a6ff37" method="POST">
+            <input type="hidden" name="_captcha" value="false">
             <div class="TextBox__Div">
               <label for="name">Name</label>
-              <input type="text" id="name" />
+              <input selector="Name" type="text" name='name' id="name" />
             </div>
             <div class="TextBox__Div">
               <label for="email">E-mail</label>
-              <input type="text" id="email" />
+              <input selector="Email" type="text" name='email' id="email" />
             </div>
             <div class="TextBox__Div">
               <label for="message">Message</label>
-              <textarea id="message" name="" cols="25" rows="6"></textarea>
+              <textarea
+                selector="Message"
+                id="message"
+                name=""
+                cols="25"
+                rows="6"
+              ></textarea>
             </div>
-            <button class="Btn__Send">
+            <button type="submit" selector="Send__Btn" class="Btn__Send">
               <i class="fa-solid fa-paper-plane"></i>
               Send
             </button>

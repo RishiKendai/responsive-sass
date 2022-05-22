@@ -3,26 +3,27 @@
     display: flex;
     padding: 15px 5%;
     overflow: hidden;
+    // WAVES
     &::before {
         content: "";
         position: absolute;
+        background: url(../images/Mobile_Wave.png);
         bottom: 0;
         right: 0;
-        height: 503px;
-        width: 1057px;
-        transform: translate(15%, 30%);
+        height: 405px;
+        width: 980px;
         background-repeat: no-repeat;
-        background-size: cover;
-        background: url(../images/Mobile__Wave.png);
+        z-index: -1;
     }
+    // CIRCLE
     &::after {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
         transform: translate(-50%, -35%);
-        height: 200px;
-        width: 200px;
+        height: 250px;
+        width: 250px;
         border-radius: 50%;
         background-color: #8745f870;
         z-index: -1;
@@ -59,11 +60,9 @@
                 & .Icons__Box {
                     margin: 0 18px 0 0;
                     cursor: pointer;
-                    z-index: 1;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-
                     height: 44px;
                     width: 44px;
                     border: none;
@@ -72,35 +71,40 @@
                     border-radius: 6px;
                     box-shadow: 4px 4px 9px inset rgba(255, 255, 255, 0.65), 5px 5px 10px rgba(0, 0, 0, 0.41);
 
+                    & a {
+                        all: unset;
+                        cursor: pointer;
+                    }
                     & .fa-brands {
                         font-size: 1.6rem;
                         transition: all 0.3s ease-in-out;
                     }
-                    &:hover {
+                    &:active {
                         & .fa-brands {
-                            transform: scale(1.2);
+                            transform: scale(2);
+                            color: $secondary-hover;
                             filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.56));
                         }
                     }
                 }
             }
         }
+        // MIDDLE ICONS
         main {
             display: none;
-            // flex: 1 1 auto;
             & .Icons {
                 display: flex;
                 flex-direction: column;
 
                 & .fa-solid {
                     margin: 18px 0;
-                    font-size: 1.2rem;
-                    filter: drop-shadow(1px 1px 8px rgba(131, 9, 251, 0.94));
+                    font-size: 4.2rem;
+                    color: #ffffff03;
+                    transform: rotate(30deg);
                 }
             }
         }
         &-right {
-            // flex: 2 1 auto;
             & form {
                 margin: 0 auto;
                 background-color: rgba(255, 255, 255, 0.14);
@@ -113,6 +117,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                z-index: -3;
                 & .TextBox__Div {
                     width: 85%;
                     display: flex;
@@ -122,7 +127,7 @@
                 & .TextBox__Div label {
                     font: 1.1rem $title;
                     letter-spacing: 1.2px;
-                    color: $secondary-hover;
+                    color: $accent-color;
                     font-weight: 550;
                     margin-bottom: 5px;
                 }
@@ -139,6 +144,11 @@
                     outline: none;
                     color: #ffffff;
                 }
+                & .TextBox__Div input:focus,
+                & .TextBox__Div textarea:focus {
+                    border: 1px solid #fac7f2;
+                    background-color: rgba(0, 0, 0, 0.4);
+                }
                 & .TextBox__Div textarea {
                     height: 110px;
                     resize: none;
@@ -149,29 +159,49 @@
                     width: 0;
                 }
                 & .Btn__Send {
+                    outline: none;
                     position: relative;
                     margin: 10px auto;
-                    // width: 50%;
                     font-weight: 550;
                     font-size: 1.1rem;
                     padding: 10px 20px;
                     font-family: Verdana, sans-serif;
                     border: none;
                     color: #ffffff;
-                    border-radius: 6px;
+                    border-radius: 5px;
                     cursor: pointer;
-                    background-color: #ffffff40;
-                    background-color: $secondary-hover;
-                    &::after {
-                        position: absolute;
-                        content: "";
-                        inset: 0;
-                        z-index: -1;
-                        border-radius: 6px;
-                        background-color: $secondary-hover;
-                        transform: translateY(3px);
-                        filter: blur(4px);
+                    background-color: $accent-color;
+                    // box-shadow: 4px 4px 9px rgba(255, 255, 255, 0.3) inset, 4px 5px 19px #00000056;
+                    transition: all 0.34s;
+                    &:active {
+                        transform: scale(0.97);
                     }
+                }
+            }
+
+            // MESSAGE BOX
+            & .Message__Box {
+                width: 350px;
+                display: flex;
+                padding: 10px;
+                border-radius: 7px;
+                background-color: #fcb5ba;
+                // box-shadow: 4px 4px 9px inset rgba(255, 255, 255, 0.65), 5px 5px 10px rgba(0, 0, 0, 0.41);
+                margin-bottom: 15px;
+                opacity: 0;
+                transform: translateY(25px);
+                transition: all 0.4s ease-in-out;
+
+                &.show {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+                & .Message__Content {
+                    word-wrap: break-word;
+                    margin: auto;
+                    color: #92242f;
+                    font: 1.1rem $text;
                 }
             }
         }
@@ -181,15 +211,26 @@
 @media screen and(min-width:508px) {
     .Contact__Section {
         &::before {
-            transform: translate(25%, 20%);
+            height: 405px;
+            width: 1080px;
+            transform: translate(5%, 0);
+        }
+        &::after {
+            height: 350px;
+            width: 350px;
         }
     }
 }
 
-@include media-md {
+@media screen and(min-width:854px) {
     .Contact__Section {
+        height: 100vh;
+
         &::before {
-            transform: translate(5%, 10%);
+            background: url(../images/Web__Wave.png);
+            transform: translate(5%, 0);
+            height: 653px;
+            width: 3160px;
         }
         &::after {
             height: 400px;
@@ -197,10 +238,25 @@
             transform: translate(-50%, -35%);
         }
         & .Contact__Div {
+            display: flex;
+            flex-direction: row;
             &-Left {
-                padding: 8% 0 8% 10%;
+                padding: 8% 0 8% 4%;
                 & .Content {
                     width: 450px;
+                }
+            }
+            &-right {
+                & form {
+                    & .Btn__Send {
+                        &:hover {
+                            transform: translateY(-4px);
+                            box-shadow: 0 8px 12px #00000028;
+                        }
+                        &:active {
+                            transform: translateY(-4px) scale(0.97);
+                        }
+                    }
                 }
             }
         }
@@ -208,9 +264,12 @@
 }
 @include media-lg {
     .Contact__Section {
+        height: 100vh;
         padding: 15px 5%;
         &::before {
-            transform: translate(0);
+            transform: translate(0, 0);
+            height: 653px;
+            width: 3160px;
         }
         &::after {
             transform: translate(-50%, -35%);
@@ -219,17 +278,15 @@
             display: flex;
             flex-direction: row;
             &-Left {
-                padding: 8% 0;
+                padding: 3% 0 8%;
                 flex: 3 3 150px;
                 & .Content {
                     margin-bottom: 15px;
                     & h4 {
                         font-size: 4rem;
-                        font-family: $style;
                         color: rgba(255, 255, 255, 0.85);
                     }
                     & p {
-                        font-family: $text;
                         font-size: 1.5rem;
                         color: rgba(255, 255, 255, 0.55);
                     }
@@ -237,7 +294,7 @@
             }
             & main {
                 width: 100%;
-                flex: 1;
+                flex: 1.5 1 auto;
                 display: flex;
                 justify-content: center;
             }
@@ -247,7 +304,3 @@
         }
     }
 }
-// @include media-xl {
-//     .Contact__Section {
-//     }
-// }
