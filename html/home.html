@@ -28,9 +28,8 @@
     <script src="../js/sphere.js" defer></script>
     <!-- ANIMATE JS -->
     <script src="../js/animate.js" defer></script>
-<!-- CSS LINK -->
+    <!-- CSS LINK -->
     <link rel="stylesheet" href="../style/style.css" />
-
   </head>
   <!-- BODY -->
   <body class="dark">
@@ -122,7 +121,7 @@
     <!-- PROJECTS SECTION-->
     <section class="project-section">
       <h5>My Portfolio</h5>
-      <p class='Project__Description'>
+      <p class="Project__Description">
         A small gallery of recent projects done by me. I've done them all by
         learning from various platform and getting inspired by other.
       </p>
@@ -132,7 +131,11 @@
         <div class="projects">
           <div class="wrap-link">
             <!-- src="https://cdn.pixabay.com/photo/2021/08/25/20/42/field-6574455__480.jpg" -->
-            <img class="project-image" src="../images/TicTacToe.png" alt="none" />
+            <img
+              class="project-image"
+              src="../images/TicTacToe.png"
+              alt="none"
+            />
             <span class="git-link">
               <a href="#!">
                 <i class="fa-brands fa-github"></i>
@@ -197,37 +200,60 @@
     </section>
 
     <!-- CONTACT SECTION -->
-    <section class="contact-section">
-        <h5>Let's have a talk!</h5>
-        <div class='Contact__Icons'>
-          <i class="fa-solid fa-at"></i>
-          <i class="fa-solid fa-envelope"></i>
-          <i class="fa-solid fa-phone"></i>
-          <i class="fa-solid fa-mobile-screen-button"></i>
-        </div>
-      <form>
-        <div class="TextBox__Div">
-          <label for="name">Name</label>
-          <input type="text" id="name" />
-        </div>
-        <div class="TextBox__Div">
-          <label for="email">E-mail</label>
-          <input type="text" id="email" />
-        </div>
-        <div class="TextBox__Div">
-          <label for="message">Message</label>
-          <textarea id="message" name="" cols="25" rows="6"></textarea>
-        </div>
-        <button class="Btn__Send">
-          <i class="fa-solid fa-paper-plane"></i>
-          Send
-        </button>
-      </form>
-      <div class="Social__Icons">
-        <i class="fa-brands fa-github"></i>
-        <i class="fa-brands fa-linkedin"></i>
-        <i class="fa-brands fa-instagram"></i>
+    <section class="Contact__Section">
+      <div class="Contact__Div">
+        <aside class="Contact__Div-Left">
+          <!-- CONTENT -->
+          <div class="Content">
+            <h4>Let's have a talk!</h4>
+            <p>You can share your taughts with me. Feel free to contact me</p>
+          </div>
+          <!-- SOCIAL -->
+          <div class="Social__Icons">
+            <div class="Icons__Box">
+              <i class="fa-brands fa-github"></i>
+            </div>
+            <div class="Icons__Box">
+              <i class="fa-brands fa-linkedin"></i>
+            </div>
+            <div class="Icons__Box">
+              <i class="fa-brands fa-instagram"></i>
+            </div>
+          </div>
+        </aside>
+        <main>
+          <!-- ICONS -->
+          <div class="Icons">
+            <i class="fa-solid fa-at"></i>
+            <i class="fa-solid fa-envelope"></i>
+            <i class="fa-solid fa-phone"></i>
+          </div>
+        </main>
+        <aside class="Contact__Div-right">
+          <form>
+            <div class="TextBox__Div">
+              <label for="name">Name</label>
+              <input type="text" id="name" />
+            </div>
+            <div class="TextBox__Div">
+              <label for="email">E-mail</label>
+              <input type="text" id="email" />
+            </div>
+            <div class="TextBox__Div">
+              <label for="message">Message</label>
+              <textarea id="message" name="" cols="25" rows="6"></textarea>
+            </div>
+            <button class="Btn__Send">
+              <i class="fa-solid fa-paper-plane"></i>
+              Send
+            </button>
+          </form>
+        </aside>
       </div>
+
+      <!-- <div> -->
+      <!-- <img class="Web__Waves" src="/images/wave.png" alt="" srcset="" /> -->
+      <!-- </div> -->
     </section>
   </body>
 </html>

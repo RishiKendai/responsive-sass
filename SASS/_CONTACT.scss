@@ -1,187 +1,258 @@
-.contact-section {
-    padding: 0 15px 5%;
+.Contact__Section {
     position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    & h5 {
-        font: 700 3.5rem $style;
-        color: $secondary-color;
-        margin-bottom: 3%;
+    padding: 15px 5%;
+    overflow: hidden;
+    &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        height: 503px;
+        width: 1057px;
+        transform: translate(15%, 30%);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background: url(/images/Mobile__Wave.png);
+    }
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -35%);
+        height: clamp(50px, 50vh, 350px);
+        width: clamp(50px, 50%, 350px);
+        border-radius: 50%;
+        background-color: #8745f870;
+        z-index: -1;
     }
 
-    & form {
-        margin: 0 auto;
-        background-color: rgba(0, 0, 0, 0.25);
-        backdrop-filter: blur(18px);
-        border-radius: 8px;
-        border: 1px solid rgba(0, 0, 0, 0.18);
-        -webkit-backdrop-filter: blur(18px);
-        width: 350px;
-        height: 420px;
+    .Contact__Div {
         display: flex;
         flex-direction: column;
         align-items: center;
-        & .TextBox__Div {
-            width: 85%;
-            display: flex;
-            flex-direction: column;
-            margin: 15px 0 5px;
-        }
-        & .TextBox__Div label {
-            font: 1.1rem $title;
-            letter-spacing: 1.2px;
-            color: $secondary-hover;
-            font-weight: 550;
-            margin-bottom: 5px;
-        }
-
-        & .TextBox__Div input,
-        & .TextBox__Div textarea {
-            padding: 5px;
-            height: 40px;
-            font: 1rem $text;
-            letter-spacing: 1.2px;
-            border: 1px solid rgba(0, 0, 0, 0.25);
-            background-color: rgba(0, 0, 0, 0.18);
-            border-radius: 5px;
-            outline: none;
-            color: #ffffffaf;
-        }
-        & .TextBox__Div textarea {
-            height: 110px;
-            resize: none;
-            font-size: 1rem;
-            scrollbar-width: 0;
-        }
-        & .TextBox__Div textarea::-webkit-scrollbar {
-            width: 0;
-        }
-        & .Btn__Send {
-            position: relative;
-            margin: 10px auto;
-            width: 50%;
-            font-weight: 550;
-            font-size: 1.1rem;
-            padding: 8px 15px;
-            font-family: Verdana, sans-serif;
-            border: none;
-            color: #ffffff;
-            border-radius: 6px;
-            cursor: pointer;
-            background-color: #ffffff40;
-            overflow: hidden;
-
-            &::after {
-                position: absolute;
-                content: "";
-                inset: 0;
-                transform: translate(-85px, -50px) rotate(-45deg);
-                background: linear-gradient(to bottom, #ffffff14, rgba(255, 255, 255, 0.25));
-                transition: all 0.58s ease-in-out;
-            }
-            &:hover::after,
-            &:active::after {
-                position: absolute;
-                content: "";
-                inset: 0;
-                transform: translate(85px, 50px) rotate(-45deg);
-            }
-        }
-    }
-    & .Social__Icons {
-        height: 40px;
-        width: 350px;
-        margin: 10px 0;
-        display: flex;
         justify-content: center;
-        align-items: center;
-        & .fa-brands {
-            padding-right: 15px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            color: #ffffff30;
-            transition: all 350ms ease;
-            &:hover {
-                transform: scale(1.2);
-                color: #ffffff;
-                text-shadow: 0 0 8px $secondary-color;
+        width: 100%;
+        &-Left {
+            flex: 1 1 auto;
+            padding: 8% 0 8% 5%;
+            margin-bottom: 25px;
+            & .Content {
+                width: 350px;
+                margin-bottom: 15px;
+                & h4 {
+                    margin: 0 auto;
+                    font-size: 3.2rem;
+                    font-family: $style;
+                    color: #ffffff;
+                }
+                & p {
+                    padding-right: 6%;
+                    font-family: $text;
+                    font-size: 1.2rem;
+                    color: #fffffff6;
+                }
+            }
+            & .Social__Icons {
+                display: flex;
+                & .Icons__Box {
+                    margin: 0 18px 0 0;
+                    cursor: pointer;
+                    z-index: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    height: 44px;
+                    width: 44px;
+                    border: none;
+                    outline: none;
+                    background-color: $secondary-color;
+                    border-radius: 6px;
+                    box-shadow: 4px 4px 9px inset rgba(255, 255, 255, 0.65), 5px 5px 10px rgba(0, 0, 0, 0.41);
+
+                    & .fa-brands {
+                        font-size: 1.6rem;
+                        transition: all 0.3s ease-in-out;
+                    }
+                    &:hover {
+                        & .fa-brands {
+                            transform: scale(1.2);
+                            filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.56));
+                        }
+                    }
+                }
+            }
+        }
+        main {
+            display: none;
+            // flex: 1 1 auto;
+            & .Icons {
+                display: flex;
+                flex-direction: column;
+
+                & .fa-solid {
+                    margin: 18px 0;
+                    font-size: 1.2rem;
+                    filter: drop-shadow(1px 1px 8px rgba(131, 9, 251, 0.94));
+                }
+            }
+        }
+        &-right {
+            // flex: 2 1 auto;
+            & form {
+                margin: 0 auto;
+                background-color: rgba(255, 255, 255, 0.14);
+                backdrop-filter: blur(16px);
+                border-radius: 11px;
+                border: 1px solid rgba(0, 0, 0, 0.18);
+                -webkit-backdrop-filter: blur(18px);
+                width: 350px;
+                height: 420px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                & .TextBox__Div {
+                    width: 85%;
+                    display: flex;
+                    flex-direction: column;
+                    margin: 15px 0 5px;
+                }
+                & .TextBox__Div label {
+                    font: 1.1rem $title;
+                    letter-spacing: 1.2px;
+                    color: $secondary-hover;
+                    font-weight: 550;
+                    margin-bottom: 5px;
+                }
+
+                & .TextBox__Div input,
+                & .TextBox__Div textarea {
+                    padding: 5px;
+                    height: 40px;
+                    font: 1rem $text;
+                    letter-spacing: 1.2px;
+                    border: 1px solid rgba(0, 0, 0, 0.05);
+                    background-color: rgba(0, 0, 0, 0.2);
+                    border-radius: 5px;
+                    outline: none;
+                    color: #ffffff;
+                }
+                & .TextBox__Div textarea {
+                    height: 110px;
+                    resize: none;
+                    font-size: 1rem;
+                    scrollbar-width: 0;
+                }
+                & .TextBox__Div textarea::-webkit-scrollbar {
+                    width: 0;
+                }
+                & .Btn__Send {
+                    position: relative;
+                    margin: 10px auto;
+                    // width: 50%;
+                    font-weight: 550;
+                    font-size: 1.1rem;
+                    padding: 10px 20px;
+                    font-family: Verdana, sans-serif;
+                    border: none;
+                    color: #ffffff;
+                    border-radius: 6px;
+                    cursor: pointer;
+                    background-color: #ffffff40;
+                    background-color: $secondary-hover;
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        inset: 0;
+                        z-index: -1;
+                        border-radius: 6px;
+                        background-color: $secondary-hover;
+                        transform: translateY(3px);
+                        filter: blur(4px);
+                    }
+                }
             }
         }
     }
-    .Contact__Icons {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        z-index: -1;
-
-        & .fa-solid {
-            position: absolute;
-            font-size: 6rem;
-            color: rgba(255, 255, 255, 0.04);
-        }
-        & .fa-at {
-            top: 35%;
-            left: 30px;
-            transform: rotate(-35deg);
-        }
-        & .fa-envelope {
-            top: 35%;
-            right: 30px;
-            transform: rotate(40deg);
-        }
-        & .fa-phone {
-            top: 70%;
-            left: 30px;
-            transform: rotate(-5deg);
-        }
-        & .fa-mobile-screen-button {
-            top: 75%;
-            right: 30px;
-            transform: rotate(40deg);
-        }
-    }
-}
-@for $i from 1 through 4 {
-    .Contact__Icons .fa-solid:nth-child(#{$i}) {
-        transition: all 0.4s ease;
-        // animation: color-transition ease-in 2s ($i * 0.35s) infinite;
-        transition-delay: ($i * 0.1s) + 0.15s;
-    }
 }
 
-@keyframes color-transition {
-    to {
-        color: #ffffff;
-        filter: drop-shadow(0 0 10px $secondary-color);
+@media screen and(min-width:508px) {
+    .Contact__Section {
+        &::before {
+            transform: translate(25%, 20%);
+        }
+        &::after {
+            transform: translate(-50%, -35%);
+        }
     }
 }
 
 @include media-md {
-    .contact-section {
-        .Contact__Icons {
-            width: 70%;            
-            & .fa-solid {
-                color: #ffffff;
-                filter: drop-shadow(1px 1px 7px $secondary-color);
+    .Contact__Section {
+        &::before {
+            transform: translate(5%, 10%);
+        }
+        &::after {
+            transform: translate(-50%, -35%);
+        }
+        & .Contact__Div {
+            &-Left {
+                padding: 8% 0 8% 10%;
+                & .Content {
+                    width: 450px;
+                }
             }
-
         }
     }
 }
 @include media-lg {
-    .contact-section {
-        .Contact__Icons {
-            width: 57%;
+    .Contact__Section {
+        height: 100vh;
+        padding: 15px 5%;
+        &::before {
+            // transform: translate(15%, 30%);
+            transform: translate(0);
+        }
+        &::after {
+            // transform: translate(-50%, -35%);
+            transform: translate(-50%, -35%);
+        }
+        & .Contact__Div {
+            display: flex;
+            flex-direction: row;
+            &-Left {
+                padding: 8% 0;
+                flex: 3 3 150px;
+                // background-color: lavender;
+                & .Content {
+                    margin-bottom: 15px;
+                    & h4 {
+                        font-size: 4rem;
+                        font-family: $style;
+                        color: rgba(255, 255, 255, 0.85);
+                    }
+                    & p {
+                        font-family: $text;
+                        font-size: 1.5rem;
+                        color: rgba(255, 255, 255, 0.55);
+                    }
+                }
+            }
+            & main {
+                width: 100%;
+                flex: 1;
+                display: flex;
+                justify-content: center;
+            }
+            &-right {
+                flex: 2;
+            }
         }
     }
 }
-@include media-xl {
-    .contact-section {
-        .Contact__Icons {
-            width: 62%;
-        }
-    }
-}
+// @include media-xl {
+//     .Contact__Section {
+//     }
+// }

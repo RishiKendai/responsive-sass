@@ -7,7 +7,6 @@ body {
 }
 
 :root {
-  --primary-color: #f1e9f9;
   --text-50: #272727a3;
   --text-75: #272727;
 }
@@ -376,9 +375,44 @@ section.home {
   }
 }
 
-.contact-section {
-  padding: 0 15px 5%;
+.Contact__Section {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px 5%;
+  overflow: hidden;
+}
+
+.Contact__Section::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 503px;
+  width: 1057px;
+  -webkit-transform: translate(15%, 30%);
+          transform: translate(15%, 30%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background: url(/images/Mobile__Wave.png);
+}
+
+.Contact__Section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(-50%, -35%);
+          transform: translate(-50%, -35%);
+  height: clamp(50px, 50vh, 350px);
+  width: clamp(50px, 50%, 350px);
+  border-radius: 50%;
+  background-color: #8745f870;
+  z-index: -1;
+}
+
+.Contact__Section .Contact__Div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -386,25 +420,111 @@ section.home {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.Contact__Section .Contact__Div-Left {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  padding: 8% 0 8% 5%;
+  margin-bottom: 25px;
+}
+
+.Contact__Section .Contact__Div-Left .Content {
+  width: 350px;
+  margin-bottom: 15px;
+}
+
+.Contact__Section .Contact__Div-Left .Content h4 {
+  margin: 0 auto;
+  font-size: 3.2rem;
+  font-family: "Caveat", cursive;
+  color: #ffffff;
+}
+
+.Contact__Section .Contact__Div-Left .Content p {
+  padding-right: 6%;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  color: #fffffff6;
+}
+
+.Contact__Section .Contact__Div-Left .Social__Icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.Contact__Section .Contact__Div-Left .Social__Icons .Icons__Box {
+  margin: 0 18px 0 0;
+  cursor: pointer;
+  z-index: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  height: 44px;
+  width: 44px;
+  border: none;
+  outline: none;
+  background-color: #8547c2;
+  border-radius: 6px;
+  -webkit-box-shadow: 4px 4px 9px inset rgba(255, 255, 255, 0.65), 5px 5px 10px rgba(0, 0, 0, 0.41);
+          box-shadow: 4px 4px 9px inset rgba(255, 255, 255, 0.65), 5px 5px 10px rgba(0, 0, 0, 0.41);
 }
 
-.contact-section h5 {
-  font: 700 3.5rem "Caveat", cursive;
-  color: #8547c2;
-  margin-bottom: 3%;
+.Contact__Section .Contact__Div-Left .Social__Icons .Icons__Box .fa-brands {
+  font-size: 1.6rem;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-.contact-section form {
+.Contact__Section .Contact__Div-Left .Social__Icons .Icons__Box:hover .fa-brands {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.56));
+          filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.56));
+}
+
+.Contact__Section .Contact__Div main {
+  display: none;
+}
+
+.Contact__Section .Contact__Div main .Icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.Contact__Section .Contact__Div main .Icons .fa-solid {
+  margin: 18px 0;
+  font-size: 1.2rem;
+  -webkit-filter: drop-shadow(1px 1px 8px rgba(131, 9, 251, 0.94));
+          filter: drop-shadow(1px 1px 8px rgba(131, 9, 251, 0.94));
+}
+
+.Contact__Section .Contact__Div-right form {
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.25);
-  backdrop-filter: blur(18px);
-  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.14);
+  -webkit-backdrop-filter: blur(16px);
+          backdrop-filter: blur(16px);
+  border-radius: 11px;
   border: 1px solid rgba(0, 0, 0, 0.18);
   -webkit-backdrop-filter: blur(18px);
   width: 350px;
@@ -421,7 +541,7 @@ section.home {
           align-items: center;
 }
 
-.contact-section form .TextBox__Div {
+.Contact__Section .Contact__Div-right form .TextBox__Div {
   width: 85%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -433,7 +553,7 @@ section.home {
   margin: 15px 0 5px;
 }
 
-.contact-section form .TextBox__Div label {
+.Contact__Section .Contact__Div-right form .TextBox__Div label {
   font: 1.1rem "Noto Serif", serif;
   letter-spacing: 1.2px;
   color: #b894db;
@@ -441,202 +561,143 @@ section.home {
   margin-bottom: 5px;
 }
 
-.contact-section form .TextBox__Div input,
-.contact-section form .TextBox__Div textarea {
+.Contact__Section .Contact__Div-right form .TextBox__Div input,
+.Contact__Section .Contact__Div-right form .TextBox__Div textarea {
   padding: 5px;
   height: 40px;
   font: 1rem "Poppins", sans-serif;
   letter-spacing: 1.2px;
-  border: 1px solid rgba(0, 0, 0, 0.25);
-  background-color: rgba(0, 0, 0, 0.18);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   outline: none;
-  color: #ffffffaf;
+  color: #ffffff;
 }
 
-.contact-section form .TextBox__Div textarea {
+.Contact__Section .Contact__Div-right form .TextBox__Div textarea {
   height: 110px;
   resize: none;
   font-size: 1rem;
   scrollbar-width: 0;
 }
 
-.contact-section form .TextBox__Div textarea::-webkit-scrollbar {
+.Contact__Section .Contact__Div-right form .TextBox__Div textarea::-webkit-scrollbar {
   width: 0;
 }
 
-.contact-section form .Btn__Send {
+.Contact__Section .Contact__Div-right form .Btn__Send {
   position: relative;
   margin: 10px auto;
-  width: 50%;
   font-weight: 550;
   font-size: 1.1rem;
-  padding: 8px 15px;
+  padding: 10px 20px;
   font-family: Verdana, sans-serif;
   border: none;
   color: #ffffff;
   border-radius: 6px;
   cursor: pointer;
   background-color: #ffffff40;
-  overflow: hidden;
+  background-color: #b894db;
 }
 
-.contact-section form .Btn__Send::after {
+.Contact__Section .Contact__Div-right form .Btn__Send::after {
   position: absolute;
   content: "";
   inset: 0;
-  -webkit-transform: translate(-85px, -50px) rotate(-45deg);
-          transform: translate(-85px, -50px) rotate(-45deg);
-  background: -webkit-gradient(linear, left top, left bottom, from(#ffffff14), to(rgba(255, 255, 255, 0.25)));
-  background: linear-gradient(to bottom, #ffffff14, rgba(255, 255, 255, 0.25));
-  -webkit-transition: all 0.58s ease-in-out;
-  transition: all 0.58s ease-in-out;
-}
-
-.contact-section form .Btn__Send:hover::after, .contact-section form .Btn__Send:active::after {
-  position: absolute;
-  content: "";
-  inset: 0;
-  -webkit-transform: translate(85px, 50px) rotate(-45deg);
-          transform: translate(85px, 50px) rotate(-45deg);
-}
-
-.contact-section .Social__Icons {
-  height: 40px;
-  width: 350px;
-  margin: 10px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.contact-section .Social__Icons .fa-brands {
-  padding-right: 15px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  color: #ffffff30;
-  -webkit-transition: all 350ms ease;
-  transition: all 350ms ease;
-}
-
-.contact-section .Social__Icons .fa-brands:hover {
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
-  color: #ffffff;
-  text-shadow: 0 0 8px #8547c2;
-}
-
-.contact-section .Contact__Icons {
-  position: absolute;
-  height: 100%;
-  width: 100%;
   z-index: -1;
+  border-radius: 6px;
+  background-color: #b894db;
+  -webkit-transform: translateY(3px);
+          transform: translateY(3px);
+  -webkit-filter: blur(4px);
+          filter: blur(4px);
 }
 
-.contact-section .Contact__Icons .fa-solid {
-  position: absolute;
-  font-size: 6rem;
-  color: rgba(255, 255, 255, 0.04);
-}
-
-.contact-section .Contact__Icons .fa-at {
-  top: 35%;
-  left: 30px;
-  -webkit-transform: rotate(-35deg);
-          transform: rotate(-35deg);
-}
-
-.contact-section .Contact__Icons .fa-envelope {
-  top: 35%;
-  right: 30px;
-  -webkit-transform: rotate(40deg);
-          transform: rotate(40deg);
-}
-
-.contact-section .Contact__Icons .fa-phone {
-  top: 70%;
-  left: 30px;
-  -webkit-transform: rotate(-5deg);
-          transform: rotate(-5deg);
-}
-
-.contact-section .Contact__Icons .fa-mobile-screen-button {
-  top: 75%;
-  right: 30px;
-  -webkit-transform: rotate(40deg);
-          transform: rotate(40deg);
-}
-
-.Contact__Icons .fa-solid:nth-child(1) {
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  -webkit-transition-delay: 0.25s;
-          transition-delay: 0.25s;
-}
-
-.Contact__Icons .fa-solid:nth-child(2) {
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  -webkit-transition-delay: 0.35s;
-          transition-delay: 0.35s;
-}
-
-.Contact__Icons .fa-solid:nth-child(3) {
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  -webkit-transition-delay: 0.45s;
-          transition-delay: 0.45s;
-}
-
-.Contact__Icons .fa-solid:nth-child(4) {
-  -webkit-transition: all 0.4s ease;
-  transition: all 0.4s ease;
-  -webkit-transition-delay: 0.55s;
-          transition-delay: 0.55s;
-}
-
-@-webkit-keyframes color-transition {
-  to {
-    color: #ffffff;
-    -webkit-filter: drop-shadow(0 0 10px #8547c2);
-            filter: drop-shadow(0 0 10px #8547c2);
+@media screen and (min-width: 508px) {
+  .Contact__Section::before {
+    -webkit-transform: translate(25%, 20%);
+            transform: translate(25%, 20%);
   }
-}
-
-@keyframes color-transition {
-  to {
-    color: #ffffff;
-    -webkit-filter: drop-shadow(0 0 10px #8547c2);
-            filter: drop-shadow(0 0 10px #8547c2);
+  .Contact__Section::after {
+    -webkit-transform: translate(-50%, -35%);
+            transform: translate(-50%, -35%);
   }
 }
 
 @media screen and (min-width: 768px) {
-  .contact-section .Contact__Icons {
-    width: 70%;
+  .Contact__Section::before {
+    -webkit-transform: translate(5%, 10%);
+            transform: translate(5%, 10%);
   }
-  .contact-section .Contact__Icons .fa-solid {
-    color: #ffffff;
-    -webkit-filter: drop-shadow(1px 1px 7px #8547c2);
-            filter: drop-shadow(1px 1px 7px #8547c2);
+  .Contact__Section::after {
+    -webkit-transform: translate(-50%, -35%);
+            transform: translate(-50%, -35%);
+  }
+  .Contact__Section .Contact__Div-Left {
+    padding: 8% 0 8% 10%;
+  }
+  .Contact__Section .Contact__Div-Left .Content {
+    width: 450px;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .contact-section .Contact__Icons {
-    width: 57%;
+  .Contact__Section {
+    height: 100vh;
+    padding: 15px 5%;
   }
-}
-
-@media screen and (min-width: 1600px) {
-  .contact-section .Contact__Icons {
-    width: 62%;
+  .Contact__Section::before {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  .Contact__Section::after {
+    -webkit-transform: translate(-50%, -35%);
+            transform: translate(-50%, -35%);
+  }
+  .Contact__Section .Contact__Div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .Contact__Section .Contact__Div-Left {
+    padding: 8% 0;
+    -webkit-box-flex: 3;
+        -ms-flex: 3 3 150px;
+            flex: 3 3 150px;
+  }
+  .Contact__Section .Contact__Div-Left .Content {
+    margin-bottom: 15px;
+  }
+  .Contact__Section .Contact__Div-Left .Content h4 {
+    font-size: 4rem;
+    font-family: "Caveat", cursive;
+    color: rgba(255, 255, 255, 0.85);
+  }
+  .Contact__Section .Contact__Div-Left .Content p {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.55);
+  }
+  .Contact__Section .Contact__Div main {
+    width: 100%;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .Contact__Section .Contact__Div-right {
+    -webkit-box-flex: 2;
+        -ms-flex: 2;
+            flex: 2;
   }
 }
 
@@ -844,7 +905,7 @@ body::-webkit-scrollbar {
 }
 
 .dark {
-  --primary-color: #302f32;
+  --primary-color: #292929;
   --text-50: rgba(255, 255, 255, 0.45);
   --text-75: rgba(255, 255, 255, 0.95);
 }

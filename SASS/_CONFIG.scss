@@ -17,7 +17,7 @@ $light-50: rgba(255, 255, 255, 0.45);
 $light-75: rgba(255, 255, 255, 0.95);
 
 // DARK THEME
-$dark: #302f32;
+$dark: #292929;
 $dark-50: #272727a3;
 $dark-75: #272727;
 
@@ -27,7 +27,7 @@ $secondary-hover: #b894db;
 $accent-hover: #ebb7e2;
 
 :root {
-    --primary-color: #{$light};
+    // --primary-color: #{$light};
     --text-50: #{$dark-50};
     --text-75: #{$dark-75};
 }
