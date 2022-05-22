@@ -405,8 +405,8 @@ section.home {
   left: 0;
   -webkit-transform: translate(-50%, -35%);
           transform: translate(-50%, -35%);
-  height: clamp(50px, 50vh, 350px);
-  width: clamp(50px, 50%, 350px);
+  height: 200px;
+  width: 200px;
   border-radius: 50%;
   background-color: #8745f870;
   z-index: -1;
@@ -630,6 +630,8 @@ section.home {
             transform: translate(5%, 10%);
   }
   .Contact__Section::after {
+    height: 400px;
+    width: 400px;
     -webkit-transform: translate(-50%, -35%);
             transform: translate(-50%, -35%);
   }
